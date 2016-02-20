@@ -14,6 +14,7 @@ SCHEDULER.every "15m", :first_in => 0 do |job|
 
   train = {}
   metro = {}
+  bus = {}
   response["ResponseData"]["TrafficTypes"].each do |traffictype|
     type = traffictype["Type"]
     events = traffictype["Events"]
@@ -25,7 +26,10 @@ SCHEDULER.every "15m", :first_in => 0 do |job|
     if type == "metro"
       metro = {StatusIcon: icon, Events: events}
     end
+    if type == "bus"
+      bus = {StatusIcon: icon, Events: events}
+    end
   end
   puts "Send Event..."
-  send_event "sltrafficsituation", {Train: train, Metro: metro}
+  send_event "sltrafficsituation", {Train: train, Metro: metro, Bus: bus}
 end
