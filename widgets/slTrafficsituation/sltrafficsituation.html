@@ -1,19 +1,19 @@
-<h1 class="title">SL Traffiksituation</h1>
-<h2>Tunnelbana</h2>
+<h1 class="title" data-bind="title"></h1>
+<h2 id="metro" class="value-standard">Tunnelbana</h2>
 <!--<span data-bind="Metro.StatusIcon"/>-->
 <ul>
     <li data-foreach-item="Metro.Events">
         <span data-bind="item.Message"></span>
     </li>
 </ul>
-<h2>Bussar</h2>
+<h2 id="bus" class="value-standard">Bussar</h2>
 <!--<span data-bind="Bus.StatusIcon"/>-->
 <ul>
     <li data-foreach-item="Bus.Events">
         <span data-bind="item.Message"></span>
     </li>
 </ul>
-<h2>Pendel</h2>
+<h2 id="train" class="value-standard">Pendel</h2>
 <!--<span data-bind="Train.StatusIcon"/>-->
 <ul>
     <li data-foreach-item="Train.Events">

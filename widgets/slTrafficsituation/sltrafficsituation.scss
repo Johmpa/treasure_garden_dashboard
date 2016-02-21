@@ -1,14 +1,17 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
+// SL-färger kan hittas på http://www.slideshare.net/KanalSL/ab-sl-grafisk-profil-10-visuell-identitet
+
 $background-color:  #008ed7;
 $value-color:       #fff;
+$value-color-disturbance: #e57622;
 
 $title-color:       rgba(255, 255, 255, 0.7);
-$moreinfo-color:    rgba(255, 255, 255, 0.7);
+$moreinfo-color:    rgba(255, 255,   255, 0.7);
 
 // ----------------------------------------------------------------------------
-// Widget-number styles
+// Widget-sl styles
 // ----------------------------------------------------------------------------
 .widget-sltrafficsituation {
 
@@ -19,7 +22,15 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   }
 
   .value {
+    color: $value-color-disturbance;
+  }
+
+  .value-standard {
     color: $value-color;
+  }
+
+  .value-disturbance {
+    color: $value-color-disturbance;
   }
 
   .change-rate {
