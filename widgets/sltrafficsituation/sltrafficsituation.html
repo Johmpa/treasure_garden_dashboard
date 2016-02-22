@@ -3,21 +3,21 @@
 <!--<span data-bind="Metro.StatusIcon"/>-->
 <ul>
     <li data-foreach-item="Metro.Events">
-        <span class = "event-line" data-bind="item.TrafficLine"></span> <span class = "event-detail" data-bind="item.Message"></span>
+        <span class = "event-line" data-bind="item.TrafficLine"></span><span class = "event-detail" data-bind="item.Message"></span>
     </li>
 </ul>
 <h2 id="bus" class="value-standard">Bussar</h2>
 <!--<span data-bind="Bus.StatusIcon"/>-->
 <ul>
     <li data-foreach-item="Bus.Events">
-        <span class = "event-detail" data-bind="item.Message"></span>
+        <span class = "event-line" data-bind="item.TrafficLine"></span><span class = "event-detail" data-bind="item.Message"></span>
     </li>
 </ul>
 <h2 id="train" class="value-standard">Pendel</h2>
 <!--<span data-bind="Train.StatusIcon"/>-->
 <ul>
     <li data-foreach-item="Train.Events">
-        <span class = "event-detail" data-bind="item.Message"></span>
+        <span class = "event-line" data-bind="item.TrafficLine"></span><span class = "event-detail" data-bind="item.Message"></span>
     </li>
 </ul>
 <p class="updated-at" data-bind="updatedAtMessage"></p>
