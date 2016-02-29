@@ -20,4 +20,10 @@
         <span class = "event-line" data-bind="item.TrafficLine"></span><span class = "event-detail" data-bind="item.Message"></span>
     </li>
 </ul>
+<h2 id="local" class="value-standard">Lokalbana</h2>
+<ul>
+    <li data-foreach-item="Local.Events">
+        <span class = "event-line" data-bind="item.TrafficLine"></span><span class = "event-detail" data-bind="item.Message"></span>
+    </li>
+</ul>
 <p class="updated-at" data-bind="updatedAtMessage"></p>

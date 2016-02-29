@@ -1,0 +1,7 @@
+Application name	Treasure Garden Now Playing Widget
+API key	462e5969e6b8d93b93dbb8de90e1523d
+Shared secret	c74f8567e4c1943b6c146f446339a135
+Registered to	Johmpa
+
+Sample URL:
+http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=Johmpa&api_key=57ee3318536b23ee81d6b27e36997cde&format=json

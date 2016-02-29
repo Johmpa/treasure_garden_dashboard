@@ -9,6 +9,7 @@ class Dashing.Sltrafficsituation extends Dashing.Widget
     @setValueClassByEventType("#metro", data.Metro.StatusIcon)
     @setValueClassByEventType("#train", data.Train.StatusIcon)
     @setValueClassByEventType("#bus", data.Bus.StatusIcon)
+    @setValueClassByEventType("#local", data.Local.StatusIcon)
 
   setValueClassByEventType: (trafficType, statusIcon) ->
     console.log("setValueClassByEventType" + trafficType + ", " + statusIcon)

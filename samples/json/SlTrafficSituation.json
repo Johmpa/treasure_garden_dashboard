@@ -1,0 +1,147 @@
+{
+  "StatusCode": 0,
+  "Message": "",
+  "ExecutionTime": 43,
+  "ResponseData": {
+    "TrafficTypes": [
+      {
+        "Id": 48,
+        "Name": "Tunnelbana",
+        "Type": "metro",
+        "TrafficStatus": null,
+        "StatusIcon": "EventGood",
+        "Events": [
+          {
+            "EventId": 0,
+            "Message": "Inga större störningar",
+            "LineNumbers": null,
+            "Expanded": false,
+            "Planned": false,
+            "SortIndex": 10000,
+            "TrafficLine": null,
+            "EventInfoUrl": null,
+            "Status": null,
+            "StatusIcon": "EventGood"
+          }
+        ],
+        "Expanded": true,
+        "HasPlannedEvent": false
+      },
+      {
+        "Id": 52,
+        "Name": "Pendeltåg",
+        "Type": "train",
+        "TrafficStatus": null,
+        "StatusIcon": "EventGood",
+        "Events": [
+          {
+            "EventId": 0,
+            "Message": "Inga större störningar",
+            "LineNumbers": null,
+            "Expanded": false,
+            "Planned": false,
+            "SortIndex": 10000,
+            "TrafficLine": null,
+            "EventInfoUrl": null,
+            "Status": null,
+            "StatusIcon": "EventGood"
+          }
+        ],
+        "Expanded": true,
+        "HasPlannedEvent": false
+      },
+      {
+        "Id": 60,
+        "Name": "Lokalbana",
+        "Type": "local",
+        "TrafficStatus": null,
+        "StatusIcon": "EventGood",
+        "Events": [
+          {
+            "EventId": 0,
+            "Message": "Inga större störningar",
+            "LineNumbers": null,
+            "Expanded": false,
+            "Planned": false,
+            "SortIndex": 10000,
+            "TrafficLine": null,
+            "EventInfoUrl": null,
+            "Status": null,
+            "StatusIcon": "EventGood"
+          }
+        ],
+        "Expanded": true,
+        "HasPlannedEvent": false
+      },
+      {
+        "Id": 66,
+        "Name": "Spårvagn",
+        "Type": "tram",
+        "TrafficStatus": null,
+        "StatusIcon": "EventGood",
+        "Events": [
+          {
+            "EventId": 0,
+            "Message": "Inga större störningar",
+            "LineNumbers": null,
+            "Expanded": false,
+            "Planned": false,
+            "SortIndex": 10000,
+            "TrafficLine": null,
+            "EventInfoUrl": null,
+            "Status": null,
+            "StatusIcon": "EventGood"
+          }
+        ],
+        "Expanded": true,
+        "HasPlannedEvent": false
+      },
+      {
+        "Id": 68,
+        "Name": "Buss",
+        "Type": "bus",
+        "TrafficStatus": null,
+        "StatusIcon": "EventGood",
+        "Events": [
+          {
+            "EventId": 0,
+            "Message": "Inga större störningar",
+            "LineNumbers": null,
+            "Expanded": false,
+            "Planned": false,
+            "SortIndex": 10000,
+            "TrafficLine": null,
+            "EventInfoUrl": null,
+            "Status": null,
+            "StatusIcon": "EventGood"
+          }
+        ],
+        "Expanded": true,
+        "HasPlannedEvent": false
+      },
+      {
+        "Id": 91,
+        "Name": "Båt",
+        "Type": "fer",
+        "TrafficStatus": null,
+        "StatusIcon": "EventGood",
+        "Events": [
+          {
+            "EventId": 0,
+            "Message": "Inga större störningar",
+            "LineNumbers": null,
+            "Expanded": false,
+            "Planned": false,
+            "SortIndex": 10000,
+            "TrafficLine": null,
+            "EventInfoUrl": null,
+            "Status": null,
+            "StatusIcon": "EventGood"
+          }
+        ],
+        "Expanded": true,
+        "HasPlannedEvent": false
+      }
+    ]
+  }
+}
