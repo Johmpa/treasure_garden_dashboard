@@ -1,0 +1,23 @@
+
+// http://api.sl.se/api2/typeahead.JSON?key=1531d7002dca42f39b2c184c0a59b6f1&searchstring=v%C3%A4llingby&stationsonly=yes&maxresults=10
+{
+  "StatusCode": 0,
+  "Message": null,
+  "ExecutionTime": 0,
+  "ResponseData": [
+    {
+      "Name": "Vällingby (Stockholm)",
+      "SiteId": "9103",
+      "Type": "Station",
+      "X": "17871535",
+      "Y": "59363486"
+    },
+    {
+      "Name": "Vällingby centrum (Stockholm)",
+      "SiteId": "9103",
+      "Type": "Station",
+      "X": "17871535",
+      "Y": "59363486"
+    }
+  ]
+}

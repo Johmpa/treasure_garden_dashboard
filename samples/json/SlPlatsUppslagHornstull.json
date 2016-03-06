@@ -1,0 +1,79 @@
+// http://api.sl.se/api2/typeahead.JSON?key=1531d7002dca42f39b2c184c0a59b6f1&searchstring=Hornstull&stationsonly=yes&maxresults=10
+
+{
+  "StatusCode": 0,
+  "Message": null,
+  "ExecutionTime": 0,
+  "ResponseData": [
+    {
+      "Name": "Hornstull (Stockholm)",
+      "SiteId": "9295",
+      "Type": "Station",
+      "X": "18034231",
+      "Y": "59315537"
+    },
+    {
+      "Name": "Hornsgatan/Rosenlundsgatan (Stockholm)",
+      "SiteId": "1367",
+      "Type": "Station",
+      "X": "18054951",
+      "Y": "59318027"
+    },
+    {
+      "Name": "Skanstull (Stockholm)",
+      "SiteId": "9190",
+      "Type": "Station",
+      "X": "18076166",
+      "Y": "59307941"
+    },
+    {
+      "Name": "Rosenlundsgatan/Hornsgatan (Stockholm)",
+      "SiteId": "1367",
+      "Type": "Station",
+      "X": "18054951",
+      "Y": "59318027"
+    },
+    {
+      "Name": "Ansgariegatan (på Hornsgatan) (Stockholm)",
+      "SiteId": "1372",
+      "Type": "Station",
+      "X": "18046438",
+      "Y": "59316922"
+    },
+    {
+      "Name": "Mariatorget (på Hornsgatan) (Stockholm)",
+      "SiteId": "1335",
+      "Type": "Station",
+      "X": "18062610",
+      "Y": "59318827"
+    },
+    {
+      "Name": "Varvsgatan (på Hornsgatan) (Stockholm)",
+      "SiteId": "1373",
+      "Type": "Station",
+      "X": "18040730",
+      "Y": "59316328"
+    },
+    {
+      "Name": "Jägerhorns väg (Huddinge)",
+      "SiteId": "7103",
+      "Type": "Station",
+      "X": "17920221",
+      "Y": "59273863"
+    },
+    {
+      "Name": "Vallhornsvägen (Huddinge)",
+      "SiteId": "8157",
+      "Type": "Station",
+      "X": "18152484",
+      "Y": "59216054"
+    },
+    {
+      "Name": "Kruthornsvägen (Sollentuna)",
+      "SiteId": "5503",
+      "Type": "Station",
+      "X": "17974066",
+      "Y": "59445611"
+    }
+  ]
+}

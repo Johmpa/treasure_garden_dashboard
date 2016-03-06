@@ -1,0 +1,50 @@
+// SL-färger kan hittas på http://www.slideshare.net/KanalSL/ab-sl-grafisk-profil-10-visuell-identitet
+
+$background-color:  #008ed7;
+$value-color:       #fff;
+$value-color-disturbance: #e57622;
+
+$title-color:       rgba(255, 255, 255, 0.7);
+$moreinfo-color:    rgba(255, 255,   255, 0.7);
+
+// ----------------------------------------------------------------------------
+// Widget-sl styles
+// ----------------------------------------------------------------------------
+.widget-slreseplanerarework {
+
+  background-color: $background-color;
+
+  .title {
+    color: $title-color;
+  }
+
+  .value-standard {
+    color: $value-color;
+  }
+
+  .change-rate {
+    font-weight: 500;
+    font-size: 30px;
+    color: $value-color;
+  }
+
+  .more-info {
+    color: $moreinfo-color;
+  }
+
+  .event-detail{
+    font-size: 15px;
+  }
+
+  .event-line{
+    font-size: 15px;
+  }
+
+  .event-line::after{
+    content: ": ";
+  }
+
+  .updated-at {
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
