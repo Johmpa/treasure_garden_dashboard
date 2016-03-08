@@ -2,7 +2,8 @@
 
 <ul>
     <li data-foreach-leg="TripList.Trip.LegList.Leg">
-        <span data-bind="leg.name"/>
+        <h3 data-bind="leg.name"/>
+        <span data-bind="leg.Origin.name"/><span> vid </span><span data-bind="leg.Origin.time"/><span> till </span><span data-bind="leg.Destination.name"/>, ankommer <span data-bind="leg.Destination.time"/>
     </li>
 </ul>
 
