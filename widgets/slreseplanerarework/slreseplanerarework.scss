@@ -47,4 +47,26 @@ $moreinfo-color:    rgba(255, 255,   255, 0.7);
   .updated-at {
     color: rgba(0, 0, 0, 0.3);
   }
+
+  /*.leg-list {
+    position: relative;
+    margin: 1em;
+    overflow: hidden;
+  }
+  .leg-list ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -1px;
+  }
+  .leg-list li {
+    flex-grow: 1;
+    flex-basis: auto;
+    margin: .25em 0;
+    //padding: 0 1em;
+    text-align: center;
+    //border-left: 1px solid #ccc;
+    border-bottom: 1px inset;
+  }*/
 }

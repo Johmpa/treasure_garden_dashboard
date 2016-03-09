@@ -1,10 +1,13 @@
 <h1 class="title" data-bind="title"></h1>
-
+<div>
 <ul>
     <li data-foreach-leg="TripList.Trip.LegList.Leg">
-        <h3 data-bind="leg.name"/>
-        <span data-bind="leg.Origin.name"/><span> vid </span><span data-bind="leg.Origin.time"/><span> till </span><span data-bind="leg.Destination.name"/>, ankommer <span data-bind="leg.Destination.time"/>
+            <h4 data-bind="leg.Origin.time | append ' ' | append leg.Origin.name"/>
+            <span data-bind="leg.name"/><span> mot </span><span data-bind="leg.dir"/>
+            <h4 data-bind="leg.Destination.time | append ' ' | append leg.Destination.name"/>
+        <hr>
     </li>
 </ul>
+</div>
 
 <p class="updated-at" data-bind="updatedAtMessage"></p>
