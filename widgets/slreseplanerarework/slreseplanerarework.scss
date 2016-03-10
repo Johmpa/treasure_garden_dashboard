@@ -1,6 +1,7 @@
 // SL-färger kan hittas på http://www.slideshare.net/KanalSL/ab-sl-grafisk-profil-10-visuell-identitet
 
-$background-color:  #008ed7;
+//$background-color:  #008ed7;
+$background-color: #002d41;
 $value-color:       #fff;
 $value-color-disturbance: #e57622;
 
@@ -32,8 +33,12 @@ $moreinfo-color:    rgba(255, 255,   255, 0.7);
     color: $moreinfo-color;
   }
 
-  .event-detail{
+  .leg-station{
     font-size: 15px;
+  }
+
+  .leg-line{
+    font-size: 12px;
   }
 
   .event-line{

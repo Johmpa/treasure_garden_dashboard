@@ -2,10 +2,11 @@
 <div>
 <ul>
     <li data-foreach-leg="TripList.Trip.LegList.Leg">
-            <h4 data-bind="leg.Origin.time | append ' ' | append leg.Origin.name"/>
-            <span data-bind="leg.name"/><span> mot </span><span data-bind="leg.dir"/>
-            <h4 data-bind="leg.Destination.time | append ' ' | append leg.Destination.name"/>
+            <h5 class="leg-station" data-bind="leg.Origin.time | append ' ' | append leg.Origin.name"/>
+            <span class="leg-line" data-bind="leg.name"/><span  class="leg-line"> mot </span><span class="leg-line" data-bind="leg.dir"/>
+            <h5 class="leg-station" data-bind="leg.Destination.time | append ' ' | append leg.Destination.name"/>
         <hr>
+        <!--<span>|</span>-->
     </li>
 </ul>
 </div>
