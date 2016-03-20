@@ -7,7 +7,7 @@ $(function() {
   //Dashing.gridsterLayout('[{"col":2,"row":1},{"col":1,"row":1},{"col":4,"row":1},{"col":3,"row":1},{"col":1,"row":2}, {"col":2,"row":2}]')
 
   // Temperatur och klocka vid sida av skärmen
-  Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":1,"row":3,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":2,"size_y":3},{"col":4,"row":2,"size_x":1,"size_y":1}]');
+  Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":1,"row":3,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":2,"size_y":3}]');
 
   Dashing.widget_base_dimensions = [390, 340];
   Dashing.numColumns = 5
@@ -24,8 +24,12 @@ $(function() {
       <i class="icon-time icon-background"></i>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <!--<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-view="Image" data-image="/the-treasure-garden-tatebayashi-shi-city-gunma-ken-prefecture-japan.jpg"></div>
+    </li>-->
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="nyheter" data-view="News" data-title="Dagens Nyheter"></div>
     </li>
 
     <!--<li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
@@ -53,8 +57,8 @@ $(function() {
       <div data-id="slreseplanerarework" data-view="Slreseplanerarework" data-title="SL-resa till Jobbet"></div>
     </li>
 
-    <!--<li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
-      <div data-id="buzzwords" data-view="List" data-unordered="true" data-title="Buzzwords" data-moreinfo="# of times said around the office"></div>
+    <!--<li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
+      <div data-id="stockholmsborsen" data-view="Rickshawgraph" data-title="OMX SPI"></div>
     </li>-->
 
     <!--<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
@@ -62,13 +66,14 @@ $(function() {
       <i class="icon-heart icon-background"></i>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
-      <div data-id="convergence" data-view="Graph" data-title="Convergence" style="background-color:#47bbb3;"></div>
-    </li>
 
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
       <div data-id="twitter_mentions" data-view="Comments" style="background-color:#ff9618;" data-moreinfo="Tweets tagged with #todayilearned"></div>
       <i class="icon-twitter icon-background"></i>
+    </li>-->
+
+    <!--<li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
+      <div data-id="buzzwords" data-view="List" data-unordered="true" data-title="Buzzwords" data-moreinfo="# of times said around the office"></div>
     </li>-->
 
 

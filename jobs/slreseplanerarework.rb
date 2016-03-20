@@ -12,32 +12,8 @@ SCHEDULER.every "10m", :first_in => 0 do |job|
   http     = Net::HTTP.new "api.sl.se"
   request  = http.request Net::HTTP::Get.new("/api2/TravelplannerV2/trip.JSON?key=#{key}&originId=9103&destId=9295&unsharp=1&numTrips=1&realtime=true")
   response = JSON.parse request.body
-  puts response["TripList"]
+  #puts response["TripList"]
 
-=begin
-  train = {}
-  metro = {}
-  bus = {}
-  local = {}
-  response["ResponseData"]["TrafficTypes"].each do |traffictype|
-    type = traffictype["Type"]
-    events = traffictype["Events"]
-    icon = traffictype["StatusIcon"]
-
-    if type == "train"
-      train = {StatusIcon: icon, Events: events}
-    end
-    if type == "metro"
-      metro = {StatusIcon: icon, Events: events}
-    end
-    if type == "bus"
-      bus = {StatusIcon: icon, Events: events}
-    end
-    if type == "local"
-      local = {StatusIcon: icon, Events: events}
-    end
-  end
-=end
   puts "Send Event Planerare..."
   send_event "slreseplanerarework", response
 end
