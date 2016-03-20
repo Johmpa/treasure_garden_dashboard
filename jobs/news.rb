@@ -8,7 +8,8 @@ news_feeds = {
   #"mashable" => "http://feeds.feedburner.com/Mashable",
   #"techcrunch" => "http://feeds.feedburner.com/TechCrunch/",
   #"opm" => "http://www.opm.gov/rss/operatingstatus.atom",
-  "dn" => "http://www.dn.se/nyheter/m/rss/",
+  #"dn" => "http://www.dn.se/nyheter/m/rss/",
+  "svd" => "http://www.svd.se/?service=rss",
 }
 
 Decoder = HTMLEntities.new
