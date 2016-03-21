@@ -6,13 +6,18 @@ $value-color:       #fff;
  
 $title-color:       rgba(255, 255, 255, 0.7);;
 $moreinfo-color:    rgba(255, 255, 255, 0.8);;
- 
+
+$ironmancyan: #84CED3;
+$rainclouds: #203341;
+$onethirtyBA: #4E6E82;
+$emiliascloud: #ABC7D1;
+$up: #E3E8EB;
 // ----------------------------------------------------------------------------
 // Widget-news styles
 // ----------------------------------------------------------------------------
 .widget-news {
 
-  background-color: $background-color;
+  background-color: $onethirtyBA;
   vertical-align: baseline !important;
 
   .headline-container {
@@ -25,11 +30,11 @@ $moreinfo-color:    rgba(255, 255, 255, 0.8);;
 
   .description {
     font-size: 0.8em;
-    color: $moreinfo-color;
+    color: $up;
   }
 
   .heading{
-    color: $title-color;
+    color: $ironmancyan;
   }
 
 

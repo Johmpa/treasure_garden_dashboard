@@ -8,19 +8,25 @@ $value-color-disturbance: #e57622;
 $title-color:       rgba(255, 255, 255, 0.7);
 $moreinfo-color:    rgba(255, 255,   255, 0.7);
 
+$ironmancyan: #84CED3;
+$rainclouds: #203341;
+$onethirtyBA: #4E6E82;
+$emiliascloud: #ABC7D1;
+$up: #E3E8EB;
+
 // ----------------------------------------------------------------------------
 // Widget-sl styles
 // ----------------------------------------------------------------------------
 .widget-slreseplanerarework {
 
-  background-color: $background-color;
+  background-color: $rainclouds;
 
   .title {
-    color: $title-color;
+    color: $up;
   }
 
   .value-standard {
-    color: $value-color;
+    color: $ironmancyan;
   }
 
   .change-rate {
