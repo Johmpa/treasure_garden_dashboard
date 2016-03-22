@@ -12,8 +12,8 @@ Dashing.on 'ready', ->
   Dashing.widget_base_dimensions ||= [300, 360]
   Dashing.numColumns ||= 4
 
-  contentWidth = (Dashing.widget_base_dimensions[0] + Dashing.widget_margins[0] * 2) * Dashing.numColumns
-
+  #contentWidth = (Dashing.widget_base_dimensions[0] + Dashing.widget_margins[0] * 2) * Dashing.numColumns
+  contentWidth = 1680 #Hårdkodat
   Batman.setImmediate ->
     $('.gridster').width(contentWidth)
     $('.gridster ul:first').gridster
