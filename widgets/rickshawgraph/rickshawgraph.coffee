@@ -131,6 +131,8 @@ class Dashing.Rickshawgraph extends Dashing.Widget
     $node.append $graph
     series = @_parseData {points: @get('points'), series: @get('series')}
 
+    minimum = @get('minimum')
+
     graphOptions = {
       element:  $graph.get(0),
       renderer: @getRenderer(),
@@ -139,10 +141,12 @@ class Dashing.Rickshawgraph extends Dashing.Widget
       series:   series
     }
 
+
     if !!@get('stroke') then graphOptions.stroke = true
     if @get('min') != null then graphOptions.min = @get('min')
     if @get('max') != null then graphOptions.max = @get('max')
 
+    graphOptions.min = minimum
     try
       graph = new Rickshaw.Graph graphOptions
     catch err
