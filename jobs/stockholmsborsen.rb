@@ -8,7 +8,7 @@ require 'time'
 
 
 initialdatapoints = [[400.7, 1458835811],[410.7, 1458835911],[416.9, 1458836211],[400.7, 1458836511]]
-datapoints = initialdatapoints
+datapoints = []
 previousTime = Time.new()
 
 SCHEDULER.every "10m", :first_in => 0 do |job|

@@ -18,9 +18,21 @@ SCHEDULER.every "15m", :first_in => 0 do |job|
   response = JSON.parse request.body
   results  = response["query"]["results"]
 
+  #puts request.body
   if results
     condition = results["channel"]["item"]["condition"]
     location  = results["channel"]["location"]
-    send_event "klimato", { location: location["city"], temperature: condition["temp"], code: condition["code"], format: format }
+
+    #fulhack pga APIändring
+    unit = results["channel"]["units"]["temperature"]
+    temp = condition["temp"]
+    if unit == "F"
+      puts "Farenheit detected"
+      temp = ((temp.to_f - 32)*5)/9
+    end
+
+    puts temp
+    ##
+    send_event "klimato", { location: location["city"], temperature: temp.round, code: condition["code"], format: format }
   end
 end

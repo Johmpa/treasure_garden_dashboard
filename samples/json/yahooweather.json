@@ -1,0 +1,149 @@
+{
+  "query": {
+    "count": 1,
+    "created": "2016-03-24T22:46:57Z",
+    "lang": "en-US",
+    "results": {
+      "channel": {
+        "units": {
+          "distance": "mi",
+          "pressure": "in",
+          "speed": "mph",
+          "temperature": "F"
+        },
+        "title": "Yahoo! Weather - Stockholm, Stockholm, SE",
+        "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-906057/",
+        "description": "Yahoo! Weather for Stockholm, Stockholm, SE",
+        "language": "en-us",
+        "lastBuildDate": "Thu, 24 Mar 2016 11:46 PM CET",
+        "ttl": "60",
+        "location": {
+          "city": "Stockholm",
+          "country": "Sweden",
+          "region": " Stockholm"
+        },
+        "wind": {
+          "chill": "32",
+          "direction": "205",
+          "speed": "14"
+        },
+        "atmosphere": {
+          "humidity": "80",
+          "pressure": "1003.0",
+          "rising": "0",
+          "visibility": "16.1"
+        },
+        "astronomy": {
+          "sunrise": "5:36 am",
+          "sunset": "6:12 pm"
+        },
+        "image": {
+          "title": "Yahoo! Weather",
+          "width": "142",
+          "height": "18",
+          "link": "http://weather.yahoo.com",
+          "url": "http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif"
+        },
+        "item": {
+          "title": "Conditions for Stockholm, Stockholm, SE at 10:00 PM CET",
+          "lat": "59.320381",
+          "long": "17.999559",
+          "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-906057/",
+          "pubDate": "Thu, 24 Mar 2016 10:00 PM CET",
+          "condition": {
+            "code": "26",
+            "date": "Thu, 24 Mar 2016 10:00 PM CET",
+            "temp": "37",
+            "text": "Cloudy"
+          },
+          "forecast": [
+            {
+              "code": "11",
+              "date": "24 Mar 2016",
+              "day": "Thu",
+              "high": "44",
+              "low": "33",
+              "text": "Showers"
+            },
+            {
+              "code": "26",
+              "date": "25 Mar 2016",
+              "day": "Fri",
+              "high": "45",
+              "low": "36",
+              "text": "Cloudy"
+            },
+            {
+              "code": "30",
+              "date": "26 Mar 2016",
+              "day": "Sat",
+              "high": "53",
+              "low": "36",
+              "text": "Partly Cloudy"
+            },
+            {
+              "code": "30",
+              "date": "27 Mar 2016",
+              "day": "Sun",
+              "high": "49",
+              "low": "38",
+              "text": "Partly Cloudy"
+            },
+            {
+              "code": "26",
+              "date": "28 Mar 2016",
+              "day": "Mon",
+              "high": "47",
+              "low": "37",
+              "text": "Cloudy"
+            },
+            {
+              "code": "39",
+              "date": "29 Mar 2016",
+              "day": "Tue",
+              "high": "47",
+              "low": "37",
+              "text": "Scattered Showers"
+            },
+            {
+              "code": "30",
+              "date": "30 Mar 2016",
+              "day": "Wed",
+              "high": "50",
+              "low": "36",
+              "text": "Partly Cloudy"
+            },
+            {
+              "code": "30",
+              "date": "31 Mar 2016",
+              "day": "Thu",
+              "high": "50",
+              "low": "34",
+              "text": "Partly Cloudy"
+            },
+            {
+              "code": "28",
+              "date": "01 Apr 2016",
+              "day": "Fri",
+              "high": "47",
+              "low": "35",
+              "text": "Mostly Cloudy"
+            },
+            {
+              "code": "28",
+              "date": "02 Apr 2016",
+              "day": "Sat",
+              "high": "47",
+              "low": "34",
+              "text": "Mostly Cloudy"
+            }
+          ],
+          "description": "<![CDATA[<img src=\"http://l.yimg.com/a/i/us/we/52/26.gif\"/>\n<BR />\n<b>Current Conditions:</b>\n<BR />Cloudy\n<BR />\n<BR />\n<b>Forecast:</b>\n<BR /> Thu - Showers. High: 44Low: 33\n<BR /> Fri - Cloudy. High: 45Low: 36\n<BR /> Sat - Partly Cloudy. High: 53Low: 36\n<BR /> Sun - Partly Cloudy. High: 49Low: 38\n<BR /> Mon - Cloudy. High: 47Low: 37\n<BR />\n<BR />\n<a href=\"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-906057/\">Full Forecast at Yahoo! Weather</a>\n<BR />\n<BR />\n(provided by <a href=\"http://www.weather.com\" >The Weather Channel</a>)\n<BR />\n]]>",
+          "guid": {
+            "isPermaLink": "false"
+          }
+        }
+      }
+    }
+  }
+}
