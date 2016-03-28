@@ -20,7 +20,7 @@ SCHEDULER.every '5m', :first_in => 0 do |job|
   http.verify_mode = OpenSSL::SSL::VERIFY_NONE
   # https://api.forecast.io/forecast/b87f3752a8dd26e046a023147f4ad715/37.8267,-122.423
   response = http.request(Net::HTTP::Get.new("/forecast/#{forecast_api_key}/#{forecast_location_lat},#{forecast_location_long}?units=#{forecast_units}"))
-  puts response.body
+  #puts response.body
   forecast = JSON.parse(response.body)
   forecast_current_temp = forecast["currently"]["temperature"].round
   forecast_current_icon = forecast["currently"]["icon"]

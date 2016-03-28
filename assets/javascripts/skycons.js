@@ -7,15 +7,15 @@
 
   (function() {
     var raf = global.requestAnimationFrame       ||
-              global.webkitRequestAnimationFrame ||
-              global.mozRequestAnimationFrame    ||
-              global.oRequestAnimationFrame      ||
-              global.msRequestAnimationFrame     ,
+            global.webkitRequestAnimationFrame ||
+            global.mozRequestAnimationFrame    ||
+            global.oRequestAnimationFrame      ||
+            global.msRequestAnimationFrame     ,
         caf = global.cancelAnimationFrame        ||
-              global.webkitCancelAnimationFrame  ||
-              global.mozCancelAnimationFrame     ||
-              global.oCancelAnimationFrame       ||
-              global.msCancelAnimationFrame      ;
+            global.webkitCancelAnimationFrame  ||
+            global.mozCancelAnimationFrame     ||
+            global.oCancelAnimationFrame       ||
+            global.msCancelAnimationFrame      ;
 
     if(raf && caf) {
       requestInterval = function(fn, delay) {
@@ -43,109 +43,109 @@
 
   /* Catmull-rom spline stuffs. */
   /*
-  function upsample(n, spline) {
-    var polyline = [],
-        len = spline.length,
-        bx  = spline[0],
-        by  = spline[1],
-        cx  = spline[2],
-        cy  = spline[3],
-        dx  = spline[4],
-        dy  = spline[5],
-        i, j, ax, ay, px, qx, rx, sx, py, qy, ry, sy, t;
+   function upsample(n, spline) {
+   var polyline = [],
+   len = spline.length,
+   bx  = spline[0],
+   by  = spline[1],
+   cx  = spline[2],
+   cy  = spline[3],
+   dx  = spline[4],
+   dy  = spline[5],
+   i, j, ax, ay, px, qx, rx, sx, py, qy, ry, sy, t;
 
-    for(i = 6; i !== spline.length; i += 2) {
-      ax = bx;
-      bx = cx;
-      cx = dx;
-      dx = spline[i    ];
-      px = -0.5 * ax + 1.5 * bx - 1.5 * cx + 0.5 * dx;
-      qx =        ax - 2.5 * bx + 2.0 * cx - 0.5 * dx;
-      rx = -0.5 * ax            + 0.5 * cx           ;
-      sx =                   bx                      ;
+   for(i = 6; i !== spline.length; i += 2) {
+   ax = bx;
+   bx = cx;
+   cx = dx;
+   dx = spline[i    ];
+   px = -0.5 * ax + 1.5 * bx - 1.5 * cx + 0.5 * dx;
+   qx =        ax - 2.5 * bx + 2.0 * cx - 0.5 * dx;
+   rx = -0.5 * ax            + 0.5 * cx           ;
+   sx =                   bx                      ;
 
-      ay = by;
-      by = cy;
-      cy = dy;
-      dy = spline[i + 1];
-      py = -0.5 * ay + 1.5 * by - 1.5 * cy + 0.5 * dy;
-      qy =        ay - 2.5 * by + 2.0 * cy - 0.5 * dy;
-      ry = -0.5 * ay            + 0.5 * cy           ;
-      sy =                   by                      ;
+   ay = by;
+   by = cy;
+   cy = dy;
+   dy = spline[i + 1];
+   py = -0.5 * ay + 1.5 * by - 1.5 * cy + 0.5 * dy;
+   qy =        ay - 2.5 * by + 2.0 * cy - 0.5 * dy;
+   ry = -0.5 * ay            + 0.5 * cy           ;
+   sy =                   by                      ;
 
-      for(j = 0; j !== n; ++j) {
-        t = j / n;
+   for(j = 0; j !== n; ++j) {
+   t = j / n;
 
-        polyline.push(
-          ((px * t + qx) * t + rx) * t + sx,
-          ((py * t + qy) * t + ry) * t + sy
-        );
-      }
-    }
+   polyline.push(
+   ((px * t + qx) * t + rx) * t + sx,
+   ((py * t + qy) * t + ry) * t + sy
+   );
+   }
+   }
 
-    polyline.push(
-      px + qx + rx + sx,
-      py + qy + ry + sy
-    );
+   polyline.push(
+   px + qx + rx + sx,
+   py + qy + ry + sy
+   );
 
-    return polyline;
-  }
+   return polyline;
+   }
 
-  function downsample(n, polyline) {
-    var len = 0,
-        i, dx, dy;
+   function downsample(n, polyline) {
+   var len = 0,
+   i, dx, dy;
 
-    for(i = 2; i !== polyline.length; i += 2) {
-      dx = polyline[i    ] - polyline[i - 2];
-      dy = polyline[i + 1] - polyline[i - 1];
-      len += Math.sqrt(dx * dx + dy * dy);
-    }
+   for(i = 2; i !== polyline.length; i += 2) {
+   dx = polyline[i    ] - polyline[i - 2];
+   dy = polyline[i + 1] - polyline[i - 1];
+   len += Math.sqrt(dx * dx + dy * dy);
+   }
 
-    len /= n;
+   len /= n;
 
-    var small = [],
-        target = len,
-        min = 0,
-        max, t;
+   var small = [],
+   target = len,
+   min = 0,
+   max, t;
 
-    small.push(polyline[0], polyline[1]);
+   small.push(polyline[0], polyline[1]);
 
-    for(i = 2; i !== polyline.length; i += 2) {
-      dx = polyline[i    ] - polyline[i - 2];
-      dy = polyline[i + 1] - polyline[i - 1];
-      max = min + Math.sqrt(dx * dx + dy * dy);
+   for(i = 2; i !== polyline.length; i += 2) {
+   dx = polyline[i    ] - polyline[i - 2];
+   dy = polyline[i + 1] - polyline[i - 1];
+   max = min + Math.sqrt(dx * dx + dy * dy);
 
-      if(max > target) {
-        t = (target - min) / (max - min);
+   if(max > target) {
+   t = (target - min) / (max - min);
 
-        small.push(
-          polyline[i - 2] + dx * t,
-          polyline[i - 1] + dy * t
-        );
+   small.push(
+   polyline[i - 2] + dx * t,
+   polyline[i - 1] + dy * t
+   );
 
-        target += len;
-      }
+   target += len;
+   }
 
-      min = max;
-    }
+   min = max;
+   }
 
-    small.push(polyline[polyline.length - 2], polyline[polyline.length - 1]);
+   small.push(polyline[polyline.length - 2], polyline[polyline.length - 1]);
 
-    return small;
-  }
-  */
+   return small;
+   }
+   */
 
   /* Define skycon things. */
   /* FIXME: I'm *really really* sorry that this code is so gross. Really, I am.
    * I'll try to clean it up eventually! Promise! */
   var KEYFRAME = 500,
       STROKE = 0.08,
-      TWO_PI = 2.0 * Math.PI,
+      TAU = 2.0 * Math.PI,
       TWO_OVER_SQRT_2 = 2.0 / Math.sqrt(2);
 
   function circle(ctx, x, y, r) {
     ctx.beginPath();
-    ctx.arc(x, y, r, 0, TWO_PI, false);
+    ctx.arc(x, y, r, 0, TAU, false);
     ctx.fill();
   }
 
@@ -157,16 +157,16 @@
   }
 
   function puff(ctx, t, cx, cy, rx, ry, rmin, rmax) {
-    var c = Math.cos(t * TWO_PI),
-        s = Math.sin(t * TWO_PI);
+    var c = Math.cos(t * TAU),
+        s = Math.sin(t * TAU);
 
     rmax -= rmin;
 
     circle(
-      ctx,
-      cx - s * rx,
-      cy + c * ry + rmax * 0.5,
-      rmin + (1 - c * 0.5) * rmax
+        ctx,
+        cx - s * rx,
+        cy + c * ry + rmax * 0.5,
+        rmin + (1 - c * 0.5) * rmax
     );
   }
 
@@ -207,11 +207,11 @@
     ctx.lineJoin = "round";
 
     ctx.beginPath();
-    ctx.arc(cx, cy, a, 0, TWO_PI, false);
+    ctx.arc(cx, cy, a, 0, TAU, false);
     ctx.stroke();
 
     for(i = 8; i--; ) {
-      p = (t + i / 8) * TWO_PI;
+      p = (t + i / 8) * TAU;
       cos = Math.cos(p);
       sin = Math.sin(p);
       line(ctx, cx + cos * b, cy + sin * b, cx + cos * c, cy + sin * c);
@@ -223,8 +223,8 @@
 
     var a = cw * 0.29 - s * 0.5,
         b = cw * 0.05,
-        c = Math.cos(t * TWO_PI),
-        p = c * TWO_PI / -16;
+        c = Math.cos(t * TAU),
+        p = c * TAU / -16;
 
     ctx.strokeStyle = color;
     ctx.lineWidth = s;
@@ -234,8 +234,8 @@
     cx += c * b;
 
     ctx.beginPath();
-    ctx.arc(cx, cy, a, p + TWO_PI / 8, p + TWO_PI * 7 / 8, false);
-    ctx.arc(cx + Math.cos(p) * a * TWO_OVER_SQRT_2, cy + Math.sin(p) * a * TWO_OVER_SQRT_2, a, p + TWO_PI * 5 / 8, p + TWO_PI * 3 / 8, true);
+    ctx.arc(cx, cy, a, p + TAU / 8, p + TAU * 7 / 8, false);
+    ctx.arc(cx + Math.cos(p) * a * TWO_OVER_SQRT_2, cy + Math.sin(p) * a * TWO_OVER_SQRT_2, a, p + TAU * 5 / 8, p + TAU * 3 / 8, true);
     ctx.closePath();
     ctx.stroke();
   }
@@ -244,8 +244,8 @@
     t /= 1350;
 
     var a = cw * 0.16,
-        b = TWO_PI * 11 / 12,
-        c = TWO_PI *  7 / 12,
+        b = TAU * 11 / 12,
+        c = TAU *  7 / 12,
         i, p, x, y;
 
     ctx.fillStyle = color;
@@ -265,8 +265,8 @@
     t /= 750;
 
     var a = cw * 0.1875,
-        b = TWO_PI * 11 / 12,
-        c = TWO_PI *  7 / 12,
+        b = TAU * 11 / 12,
+        c = TAU *  7 / 12,
         i, p, x, y;
 
     ctx.strokeStyle = color;
@@ -287,13 +287,13 @@
 
     var a  = cw * 0.16,
         b  = s * 0.75,
-        u  = t * TWO_PI * 0.7,
+        u  = t * TAU * 0.7,
         ux = Math.cos(u) * b,
         uy = Math.sin(u) * b,
-        v  = u + TWO_PI / 3,
+        v  = u + TAU / 3,
         vx = Math.cos(v) * b,
         vy = Math.sin(v) * b,
-        w  = u + TWO_PI * 2 / 3,
+        w  = u + TAU * 2 / 3,
         wx = Math.cos(w) * b,
         wy = Math.sin(w) * b,
         i, p, x, y;
@@ -305,7 +305,7 @@
 
     for(i = 4; i--; ) {
       p = (t + i / 4) % 1;
-      x = cx + Math.sin((p + i / 4) * TWO_PI) * a;
+      x = cx + Math.sin((p + i / 4) * TAU) * a;
       y = cy + p * cw;
 
       line(ctx, x - ux, y - uy, x + ux, y + uy);
@@ -331,36 +331,36 @@
   }
 
   /*
-  var WIND_PATHS = [
-        downsample(63, upsample(8, [
-          -1.00, -0.28,
-          -0.75, -0.18,
-          -0.50,  0.12,
-          -0.20,  0.12,
-          -0.04, -0.04,
-          -0.07, -0.18,
-          -0.19, -0.18,
-          -0.23, -0.05,
-          -0.12,  0.11,
-           0.02,  0.16,
-           0.20,  0.15,
-           0.50,  0.07,
-           0.75,  0.18,
-           1.00,  0.28
-        ])),
-        downsample(31, upsample(16, [
-          -1.00, -0.10,
-          -0.75,  0.00,
-          -0.50,  0.10,
-          -0.25,  0.14,
-           0.00,  0.10,
-           0.25,  0.00,
-           0.50, -0.10,
-           0.75, -0.14,
-           1.00, -0.10
-        ]))
-      ];
-  */
+   var WIND_PATHS = [
+   downsample(63, upsample(8, [
+   -1.00, -0.28,
+   -0.75, -0.18,
+   -0.50,  0.12,
+   -0.20,  0.12,
+   -0.04, -0.04,
+   -0.07, -0.18,
+   -0.19, -0.18,
+   -0.23, -0.05,
+   -0.12,  0.11,
+   0.02,  0.16,
+   0.20,  0.15,
+   0.50,  0.07,
+   0.75,  0.18,
+   1.00,  0.28
+   ])),
+   downsample(31, upsample(16, [
+   -1.00, -0.10,
+   -0.75,  0.00,
+   -0.50,  0.10,
+   -0.25,  0.14,
+   0.00,  0.10,
+   0.25,  0.00,
+   0.50, -0.10,
+   0.75, -0.14,
+   1.00, -0.10
+   ]))
+   ];
+   */
 
   var WIND_PATHS = [
         [
@@ -379,13 +379,13 @@
           -0.2064,  0.0033, -0.1853,  0.0362, -0.1613,  0.0672,
           -0.1350,  0.0961, -0.1051,  0.1213, -0.0706,  0.1397,
           -0.0332,  0.1512,  0.0053,  0.1580,  0.0442,  0.1624,
-           0.0833,  0.1636,  0.1224,  0.1615,  0.1613,  0.1565,
-           0.1999,  0.1500,  0.2378,  0.1402,  0.2749,  0.1279,
-           0.3118,  0.1147,  0.3487,  0.1015,  0.3858,  0.0892,
-           0.4236,  0.0787,  0.4621,  0.0715,  0.5012,  0.0702,
-           0.5398,  0.0766,  0.5768,  0.0890,  0.6123,  0.1055,
-           0.6466,  0.1244,  0.6805,  0.1440,  0.7147,  0.1630,
-           0.7500,  0.1800
+          0.0833,  0.1636,  0.1224,  0.1615,  0.1613,  0.1565,
+          0.1999,  0.1500,  0.2378,  0.1402,  0.2749,  0.1279,
+          0.3118,  0.1147,  0.3487,  0.1015,  0.3858,  0.0892,
+          0.4236,  0.0787,  0.4621,  0.0715,  0.5012,  0.0702,
+          0.5398,  0.0766,  0.5768,  0.0890,  0.6123,  0.1055,
+          0.6466,  0.1244,  0.6805,  0.1440,  0.7147,  0.1630,
+          0.7500,  0.1800
         ],
         [
           -0.7500,  0.0000, -0.7033,  0.0195, -0.6569,  0.0399,
@@ -394,11 +394,11 @@
           -0.3174,  0.1365, -0.2669,  0.1398, -0.2162,  0.1391,
           -0.1658,  0.1347, -0.1157,  0.1271, -0.0661,  0.1169,
           -0.0170,  0.1046,  0.0316,  0.0903,  0.0791,  0.0728,
-           0.1259,  0.0534,  0.1723,  0.0331,  0.2188,  0.0129,
-           0.2656, -0.0064,  0.3122, -0.0263,  0.3586, -0.0466,
-           0.4052, -0.0665,  0.4525, -0.0847,  0.5007, -0.1002,
-           0.5497, -0.1130,  0.5991, -0.1240,  0.6491, -0.1325,
-           0.6994, -0.1380,  0.7500, -0.1400
+          0.1259,  0.0534,  0.1723,  0.0331,  0.2188,  0.0129,
+          0.2656, -0.0064,  0.3122, -0.0263,  0.3586, -0.0466,
+          0.4052, -0.0665,  0.4525, -0.0847,  0.5007, -0.1002,
+          0.5497, -0.1130,  0.5991, -0.1240,  0.6491, -0.1325,
+          0.6994, -0.1380,  0.7500, -0.1400
         ]
       ],
       WIND_OFFSETS = [
@@ -410,7 +410,7 @@
     var a = cw / 8,
         b = a / 3,
         c = 2 * b,
-        d = (t % 1) * TWO_PI,
+        d = (t % 1) * TAU,
         e = Math.cos(d),
         f = Math.sin(d);
 
@@ -454,8 +454,8 @@
       b += 2;
 
       ctx.moveTo(
-        cx + (path[b - 2] * (1 - a) + path[b    ] * a) * cw,
-        cy + (path[b - 1] * (1 - a) + path[b + 1] * a) * cw
+          cx + (path[b - 2] * (1 - a) + path[b    ] * a) * cw,
+          cy + (path[b - 1] * (1 - a) + path[b + 1] * a) * cw
       );
 
       if(c < 1) {
@@ -469,8 +469,8 @@
           ctx.lineTo(cx + path[i] * cw, cy + path[i + 1] * cw);
 
         ctx.lineTo(
-          cx + (path[d - 2] * (1 - c) + path[d    ] * c) * cw,
-          cy + (path[d - 1] * (1 - c) + path[d + 1] * c) * cw
+            cx + (path[d - 2] * (1 - c) + path[d    ] * c) * cw,
+            cy + (path[d - 1] * (1 - c) + path[d + 1] * c) * cw
         );
       }
 
@@ -496,8 +496,8 @@
         ctx.lineTo(cx + path[i] * cw, cy + path[i + 1] * cw);
 
       ctx.lineTo(
-        cx + (path[d - 2] * (1 - c) + path[d    ] * c) * cw,
-        cy + (path[d - 1] * (1 - c) + path[d + 1] * c) * cw
+          cx + (path[d - 2] * (1 - c) + path[d    ] * c) * cw,
+          cy + (path[d - 1] * (1 - c) + path[d + 1] * c) * cw
       );
 
       ctx.stroke();
@@ -511,23 +511,23 @@
       f += 2;
 
       leaf(
-        ctx,
-        t,
-        cx + (path[f - 2] * (1 - e) + path[f    ] * e) * cw,
-        cy + (path[f - 1] * (1 - e) + path[f + 1] * e) * cw,
-        cw,
-        s,
-        color
+          ctx,
+          t,
+          cx + (path[f - 2] * (1 - e) + path[f    ] * e) * cw,
+          cy + (path[f - 1] * (1 - e) + path[f + 1] * e) * cw,
+          cw,
+          s,
+          color
       );
     }
   }
 
   var Skycons = function(opts) {
-        this.list        = [];
-        this.interval    = null;
-        this.color       = opts && opts.color ? opts.color : "black";
-        this.resizeClear = !!(opts && opts.resizeClear);
-      };
+    this.list        = [];
+    this.interval    = null;
+    this.color       = opts && opts.color ? opts.color : "black";
+    this.resizeClear = !!(opts && opts.resizeClear);
+  };
 
   Skycons.CLEAR_DAY = function(ctx, t, color) {
     var w = ctx.canvas.width,
@@ -617,10 +617,10 @@
 
     t /= 5000;
 
-    var a = Math.cos((t       ) * TWO_PI) * s * 0.02,
-        b = Math.cos((t + 0.25) * TWO_PI) * s * 0.02,
-        c = Math.cos((t + 0.50) * TWO_PI) * s * 0.02,
-        d = Math.cos((t + 0.75) * TWO_PI) * s * 0.02,
+    var a = Math.cos((t       ) * TAU) * s * 0.02,
+        b = Math.cos((t + 0.25) * TAU) * s * 0.02,
+        c = Math.cos((t + 0.50) * TAU) * s * 0.02,
+        d = Math.cos((t + 0.75) * TAU) * s * 0.02,
         n = h * 0.936,
         e = Math.floor(n - k * 0.5) + 0.5,
         f = Math.floor(n - k * 2.5) + 0.5;
@@ -635,6 +635,12 @@
   };
 
   Skycons.prototype = {
+    _determineDrawingFunction: function(draw) {
+      if(typeof draw === "string")
+        draw = Skycons[draw.toUpperCase().replace(/-/g, "_")] || null;
+
+      return draw;
+    },
     add: function(el, draw) {
       var obj;
 
@@ -645,10 +651,7 @@
       if(el === null)
         return;
 
-      if(typeof draw === "string") {
-        draw = draw.toUpperCase().replace(/-/g, "_");
-        draw = Skycons.hasOwnProperty(draw) ? Skycons[draw] : null;
-      }
+      draw = this._determineDrawingFunction(draw);
 
       // Does nothing if the draw function isn't actually a function
       if(typeof draw !== "function")
@@ -671,7 +674,7 @@
 
       for(i = this.list.length; i--; )
         if(this.list[i].element === el) {
-          this.list[i].drawing = draw;
+          this.list[i].drawing = this._determineDrawingFunction(draw);
           this.draw(this.list[i], KEYFRAME);
           return;
         }
