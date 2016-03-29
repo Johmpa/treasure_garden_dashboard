@@ -12,20 +12,29 @@ datapoints = []
 previousTime = Time.new()
 
 SCHEDULER.every "10m", :first_in => 0 do |job|
+#SCHEDULER.cron '*/5 8-19 * * 1-5' do |job| # TODO: Aktivera när grafen funkar som den ska
   source = open('http://bors-nliv.svd.se/', &:read)
 
-  #  <span class="result"><span class="time">Kl 13:00:</span> &nbsp; 475,89 &nbsp; <span class="neg">&minus;1,16%</span>
+  #  <h2 class="resource-flag sweden">OMX-S</h2><span class="result"><span class="time">Kl 17:30:</span> &nbsp; 476,42 &nbsp; <span class="pos">+0,11%</span></span>
   #puts source
-  currentvalue =  /.*<span class="result"><span class="time">Kl (.*):<.span> &nbsp. (.*) &nbsp; <span class="neg">.*/.match(source)[2]
-  percentage =  /.*<span class="result"><span class="time">Kl (.*):<.span> &nbsp. (.*) &nbsp; <span class="neg">(.*).*/.match(source)[3] # Fult men orka
-  currentvalue = currentvalue.gsub(",",".")
+
+  #puts /.*resource-flag sweden">OMX-S.*/.match(source)
+  #puts /.*resource-flag sweden">OMX-S.*\n.*<span class="time">Kl .*:.*/.match(source)
+  currentvalue =  /.*resource-flag sweden">OMX-S.*\n.*<span class="time">Kl (.*):<.span> &nbsp. (.*) &nbsp; <span class=.*>.*/.match(source)[2]
+  percentage =    /.*resource-flag sweden">OMX-S.*\n.*<span class="time">Kl (.*):<.span> &nbsp. (.*) &nbsp; <span class=.*>(.*)<.span><.span>/.match(source)[3] # Fult men orka
+  currentvalue = currentvalue.gsub(",",".") # Fixa amerikanskt decimaltecken
+  currentvalue = currentvalue.gsub(" ","") # Få bort eventuellt mellanslag i siffran
+
+  puts "Current Value: " + currentvalue
+  puts "Percentage:"
+  puts percentage
   percentage = percentage.gsub("&minus;","-")
   percentage = percentage.gsub("</span>", "") # Fulhack, men orka
-
-  puts "Percentage:"
+  puts "Trimmed Percentage:"
   puts percentage
 
   currentTime = Time.new()
+  puts "Current Time: "
 
   if (currentTime.day() != previousTime.day())
     datapoints = []
@@ -44,6 +53,7 @@ SCHEDULER.every "10m", :first_in => 0 do |job|
   puts "Omxseries:"
   puts omxseries
 
+  puts "Minimum: "
   puts datapoints.min[0]
 
   send_event('stockholmsborsen', series: [omxseries], minimum: datapoints.min[0]-10, displayedValue: percentage)
