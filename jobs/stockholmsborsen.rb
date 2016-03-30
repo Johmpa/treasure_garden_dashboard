@@ -11,8 +11,8 @@ initialdatapoints = [[400.7, 1458835811],[410.7, 1458835911],[416.9, 1458836211]
 datapoints = []
 previousTime = Time.new()
 
-SCHEDULER.every "10m", :first_in => 0 do |job|
-#SCHEDULER.cron '*/5 8-19 * * 1-5' do |job| # TODO: Aktivera när grafen funkar som den ska
+#SCHEDULER.every "10m", :first_in => 0 do |job|
+SCHEDULER.cron '*/5 7-17 * * 1-5' do |job| # TODO: Aktivera när grafen funkar som den ska
   source = open('http://bors-nliv.svd.se/', &:read)
 
   #  <h2 class="resource-flag sweden">OMX-S</h2><span class="result"><span class="time">Kl 17:30:</span> &nbsp; 476,42 &nbsp; <span class="pos">+0,11%</span></span>
@@ -56,7 +56,7 @@ SCHEDULER.every "10m", :first_in => 0 do |job|
   puts "Minimum: "
   puts datapoints.min[0]
 
-  send_event('stockholmsborsen', series: [omxseries], minimum: datapoints.min[0]-10, displayedValue: percentage)
+  send_event('stockholmsborsen', series: [omxseries], minimum: datapoints.min[0], displayedValue: percentage)
 
   previousTime = currentTime
 end
