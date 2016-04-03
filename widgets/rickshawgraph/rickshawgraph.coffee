@@ -104,7 +104,13 @@ class Dashing.Rickshawgraph extends Dashing.Widget
       if @get("legend") then for subseries, index in series
         needClear |= @graph.series[index]?.name != series[index]?.name
 
-      if needClear then @graph = @_createGraph()
+      console.log("Rickshaw check needsclear: ")
+      inputneedclear = @get("needsclear")
+      console.log(inputneedclear)
+      console.log("inputneedclear == true?:")
+      console.log(inputneedclear == true)
+
+      if needClear || inputneedclear then @graph = @_createGraph()
 
       # Copy over the new graph data
       for subseries, index in series
