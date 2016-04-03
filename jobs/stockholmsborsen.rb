@@ -12,7 +12,7 @@ datapoints = []
 previousTime = Time.new()
 
 #SCHEDULER.every "10m", :first_in => 0 do |job|
-SCHEDULER.cron '*/5 7-17 * * 1-5' do |job| # TODO: Aktivera när grafen funkar som den ska
+SCHEDULER.cron '*/5 8-18 * * 1-5' do |job| # TODO: Aktivera när grafen funkar som den ska
   source = open('http://bors-nliv.svd.se/', &:read)
 
   #  <h2 class="resource-flag sweden">OMX-S</h2><span class="result"><span class="time">Kl 17:30:</span> &nbsp; 476,42 &nbsp; <span class="pos">+0,11%</span></span>
