@@ -13,7 +13,7 @@ previousTime = Time.new()
 prevMinimum = -1;
 
 #SCHEDULER.every "1m", :first_in => 0 do |job|
-SCHEDULER.cron '*/5 8-18 * * 1-5' do |job|
+SCHEDULER.cron '*/5 9-17 * * 1-5' do |job|
   source = open('http://bors-nliv.svd.se/', &:read)
 
   #  <h2 class="resource-flag sweden">OMX-S</h2><span class="result"><span class="time">Kl 17:30:</span> &nbsp; 476,42 &nbsp; <span class="pos">+0,11%</span></span>
