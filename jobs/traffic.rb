@@ -6,7 +6,10 @@ require 'json'
 home_location = URI::encode('59.3674343,17.8718877')
 key             = URI::encode('q3sgmezmvtwn4erc4t5rkpe3')
 locations       = [{ name: "Pensionsmyndigheten", location: URI::encode('59.3155173,18.032994')},
-                   { name: "Tim", location: URI::encode('59.353267,17.899380')}]
+                   { name: "Tim", location: URI::encode('59.353267,17.899380')},
+                   { name: "Enskede Rackethall", location: URI::encode('59.287486,18.057506')},
+                   { name: "Micke", location: URI::encode('59.362983,17.945802')}
+]
 #locations << { name: "Pensionsmyndigheten", location: URI::encode('59.3155173,18.032994')}
 
 SCHEDULER.every '10m', :first_in => '15s' do |job|

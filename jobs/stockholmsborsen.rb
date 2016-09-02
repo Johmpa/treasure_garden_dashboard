@@ -26,35 +26,33 @@ SCHEDULER.cron '*/5 9-17 * * 1-5' do |job|
   currentvalue = currentvalue.gsub(",",".") # Fixa amerikanskt decimaltecken
   currentvalue = currentvalue.gsub(" ","") # Få bort eventuellt mellanslag i siffran
 
-  puts "Current Value: " + currentvalue
-  puts "Percentage:"
+  puts "OMXSPI: Current Value: " + currentvalue
+  puts "OMXSPI: Percentage:"
   puts percentage
   percentage = percentage.gsub("&minus;","-")
   percentage = percentage.gsub("</span>", "") # Fulhack, men orka
-  puts "Trimmed Percentage:"
+  puts "OMXSPI: Trimmed Percentage:"
   puts percentage
 
-  currentTime = Time.new()
-  puts "Current Time: "
+  currentTime = Time.new
+  puts "OMXSPI: Current Time: " + currentTime.to_s
 
   if (currentTime.day() != previousTime.day())
     datapoints = []
   end
-  puts currentTime
-  puts currentTime.to_i
 
-  puts "Datapoints:"
 
   datapoints << [BigDecimal.new(currentvalue).to_f, currentTime.to_i]
 
+  puts "OMXSPI: Datapoints - "
   puts datapoints
 
   omxseries = {target: "OMXSPI", datapoints: datapoints}
 
-  puts "Omxseries:"
+  puts "OMXSPI: Omxseries - "
   puts omxseries
 
-  puts "Minimum: "
+  puts "OMXSPI: Minimum - "
   puts datapoints.min[0]
 
   newMinimum = datapoints.min != prevMinimum
