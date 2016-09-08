@@ -9,14 +9,14 @@ $key = URI::encode('2ca36fc1304f4bc7ac9c87cf40b0dc06')
 # 10000 anrop per månad har jag råd med -> drygt 13 anrop per timme
 #SCHEDULER.every "10m", :first_in => 0 do |job|
 #SCHEDULER.cron '*/5 9-17 * * 1-5' do |job|
-SCHEDULER.cron '*/2 6-10 * * 1-5' do
+SCHEDULER.cron '*/3 6-10 * * 1-5' do
   puts "Sl Travel Plan: Frequent Calc"
   calculateTripAndSend
 end
-SCHEDULER.cron '*/30 10-20 * * 1-5' do
-  puts "Sl Travel Plan: Sparse calc"
-  calculateTripAndSend
-end
+#SCHEDULER.cron '*/30 10-20 * * 1-5' do
+#  puts "Sl Travel Plan: Sparse calc"
+#  calculateTripAndSend
+#end
 
 def calculateTripAndSend
   targetTime = Time.now + 8*60
