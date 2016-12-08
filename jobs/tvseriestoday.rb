@@ -63,7 +63,7 @@ series = [
 SCHEDULER.every "6h", :first_in => 0 do |job|
   # Authorization
   puts("Attempting to fetch auth token")
-  auth_uri = URI.parse("https://api.thetvdb.com/login")
+  auth_uri = URI.parse(URI.encode("https://api.thetvdb.com/login/"))
   http = Net::HTTP.new(auth_uri.host, auth_uri.port)
   http.use_ssl = true
   http.verify_mode = OpenSSL::SSL::VERIFY_NONE
