@@ -1,0 +1,113 @@
+require 'date'
+require 'net/http'
+require 'net/https'
+require 'uri'
+require 'open-uri'
+require 'bigdecimal'
+require 'time'
+require 'openssl'
+require 'json'
+
+# API: https://api.thetvdb.com/swagger
+
+
+url = "https://api.thetvdb.com"
+apikey = "51F6746BE38B32BF"
+authentication_token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODEyODUyNDQsImlkIjoiVHJlYXN1cmUgR2FyZGVuIERhc2hib2FyZCIsIm9yaWdfaWF0IjoxNDgxMTk4ODQ0fQ.ENsbnaNvL_BJzu3xl17W-ij5-mENbdhH75YHSPA3jY7jkceoNcRr-d3bQxZg4BItBnfZB6f-w-QLhfxwJO822MqGRmAse9oh6rhfElVE0-ELBcq_vZIT1TScLJzg6mLVux9XaoN-3rq9VXl4GdGiKzjxOYEtJwR_KueJ1rk8uDSxLkXAoaTVJf3mXyg_mm_D4elRoOlw1wXhFbYrA3_SCo_wXP6lirBMK8KfmhX82KHnqxIvt4Dk2H2qnyfUGBoAaTBjf9mxrW5O_JwtXXVi7uXYeXfRM95lNKHUqtA73acqKv5F4avbsq2MqDlUygAfyynrwF8EGe-kIAHkTersiA"
+series = [
+    {name: "Arrow", id: "257655", offset: 1},
+    {name: "Legends of Tomorrow", id: "295760", offset: 4},
+    {name: "Star Wars Rebels", id: "283468", offset: 1},
+    {name: "The Grand Tour", id: "314087", offset: 0},
+    {name: "Marvels Agents of S.H.I.E.L.D.", id: "263365", offset: 1},
+    {name: "The Man in the High Castle", id: "295829", offset: 1},
+    {name: "Sense8", id: "268156", offset: 0},
+    {name: "Doctor Who", id: "78804", offset: 1},
+    {name: "James May: The Reassembler", id: "309339", offset: 1},
+    {name: "Drifters", id: "312559", offset: 0},
+    {name: "Sherlock", id: "176941", offset: 1},
+    {name: "Colony", id: "284210", offset: 1},
+    {name: "The Flash", id: "279121", offset: 1},
+    {name: "The Magicians", id: "299139", offset: 0},
+    {name: "Black Sails", id: "262407", offset: 0},
+    {name: "The Expanse", id: "280619", offset: 0},
+    {name: "Last Week Tonight with John Oliver", id: "278518", offset: 1},
+    {name: "Marvel's Iron Fist", id: "317953", offset: 0},
+    {name: "Westworld", id: "296762", offset: 0},
+    {name: "12 Monkeys", id: "272644", offset: 1},
+    {name: "After the Thrones", id: "309875", offset: 0},
+    {name: "Battlebots", id: "294206", offset: 1},
+    {name: "Dark Matter", id: "292174", offset: 1},
+    {name: "Galavant", id: "281619", offset: 1},
+    {name: "House of Cards", id: "262980", offset: 0},
+    {name: "James May's Man Lab", id: "202351", offset: 1},
+    {name: "James May's Cars of the People", id: "284341", offset: 1},
+    {name: "Kabaneri of the Iron Fortress", id: "305082", offset: 1},
+    {name: "Marco Polo", id: "266091", offset: 0},
+    {name: "Marvel's Daredevil", id: "281662", offset: 0},
+    {name: "Marvel's Jessica Jones", id: "284190", offset: 0},
+    {name: "Marvel's Luke Cage", id: "304219", offset: 0},
+    {name: "Overlord", id: "294002", offset: 0},
+    {name: "Re:Zero - Starting Life in Another World", id: "305089", offset: 0},
+    {name: "Silicon Valley", id: "277165", offset: 0},
+    {name: "Stranger Things", id: "305288", offset: 0},
+    {name: "The Crown", id: "305574", offset: 0},
+    {name: "The Last Ship", id: "269533", offset: 1},
+    {name: "The Shanarra Chronicles", id: "289096", offset: 0},
+    {name: "The X-Files", id: "77398", offset: 1},
+    {name: "Top Gear", id: "74608", offset: 1},
+    {name: "Voltron: Legendary Defender", id: "307899", offset: 0}
+]
+
+
+SCHEDULER.every "6h", :first_in => 0 do |job|
+  # Authorization
+  puts("Attempting to fetch auth token")
+  auth_uri = URI.parse("https://api.thetvdb.com/login")
+  http = Net::HTTP.new(auth_uri.host, auth_uri.port)
+  http.use_ssl = true
+  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  request = Net::HTTP::Post.new(auth_uri)
+  request.add_field('Content-Type', 'application/json')
+  request.add_field('Accept-Type', 'application/json')
+  request.body = {'apikey' => '51F6746BE38B32BF'}.to_json
+  response = http.request(request)
+  responseData = JSON.parse response.body
+
+  authentication_token = responseData["token"]
+  puts("Auth token recieved")
+# Fetch episode data
+  episodes = []
+  series.each do |serie|
+
+    puts("Fetching information for series: #{serie[:name]} with offset #{serie[:offset]}")
+    t = Time.now
+    t = t - serie[:offset]*(60*60*24)
+
+    #url = "https://api.thetvdb.com/series/#{serie[:id]}/episodes/query?firstAired=2016-12-07"
+    url = "https://api.thetvdb.com/series/#{serie[:id]}/episodes/query?firstAired=#{t.strftime "%Y-%m-%d"}"
+    puts(url)
+    begin
+      buffer = open(url,
+                    :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE,
+                    "Authorization" => "Bearer #{authentication_token}").read
+
+      json_parse = JSON.parse(buffer)
+
+
+      data = json_parse["data"].first
+      title = "#{serie[:name]} #{data["airedSeason"]}x#{data["airedEpisodeNumber"]}: #{data["episodeName"]}"
+      puts(data)
+      episodes << {title: title, episode: data}
+
+    rescue OpenURI::HTTPError
+      puts("No Data found")
+    end
+  end
+
+  puts("Episodes found:")
+  puts(episodes)
+
+  puts("Send Event")
+  send_event("tvseriestoday", { :episodes => episodes})
+end
