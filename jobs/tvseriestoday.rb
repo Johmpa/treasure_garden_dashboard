@@ -63,7 +63,7 @@ series = [
 SCHEDULER.every "6h", :first_in => 0 do |job|
   # Authorization
   puts("Attempting to fetch auth token")
-  auth_uri = URI.parse(URI.encode("https://api.thetvdb.com/login/"))
+  auth_uri = URI.parse(URI.encode("https://api.thetvdb.com/login"))
   http = Net::HTTP.new(auth_uri.host, auth_uri.port)
   http.use_ssl = true
   http.verify_mode = OpenSSL::SSL::VERIFY_NONE
@@ -75,7 +75,7 @@ SCHEDULER.every "6h", :first_in => 0 do |job|
   responseData = JSON.parse response.body
 
   authentication_token = responseData["token"]
-  puts("Auth token recieved")
+  puts("Auth token recieved: #{authentication_token}")
 # Fetch episode data
   episodes = []
   series.each do |serie|
@@ -100,8 +100,8 @@ SCHEDULER.every "6h", :first_in => 0 do |job|
       puts(data)
       episodes << {title: title, episode: data}
 
-    rescue OpenURI::HTTPError
-      puts("No Data found")
+    rescue OpenURI::HTTPError => e
+      puts("No Data found due to #{e}")
     end
   end
 
