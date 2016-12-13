@@ -16,7 +16,7 @@ apikey = "51F6746BE38B32BF"
 authentication_token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODEyODUyNDQsImlkIjoiVHJlYXN1cmUgR2FyZGVuIERhc2hib2FyZCIsIm9yaWdfaWF0IjoxNDgxMTk4ODQ0fQ.ENsbnaNvL_BJzu3xl17W-ij5-mENbdhH75YHSPA3jY7jkceoNcRr-d3bQxZg4BItBnfZB6f-w-QLhfxwJO822MqGRmAse9oh6rhfElVE0-ELBcq_vZIT1TScLJzg6mLVux9XaoN-3rq9VXl4GdGiKzjxOYEtJwR_KueJ1rk8uDSxLkXAoaTVJf3mXyg_mm_D4elRoOlw1wXhFbYrA3_SCo_wXP6lirBMK8KfmhX82KHnqxIvt4Dk2H2qnyfUGBoAaTBjf9mxrW5O_JwtXXVi7uXYeXfRM95lNKHUqtA73acqKv5F4avbsq2MqDlUygAfyynrwF8EGe-kIAHkTersiA"
 series = [
     {name: "Arrow", id: "257655", offset: 1},
-    {name: "Legends of Tomorrow", id: "295760", offset: 4},
+    {name: "DC's Legends of Tomorrow", id: "295760", offset: 5},
     {name: "Star Wars Rebels", id: "283468", offset: 1},
     {name: "The Grand Tour", id: "314087", offset: 0},
     {name: "Marvels Agents of S.H.I.E.L.D.", id: "263365", offset: 1},
@@ -43,7 +43,6 @@ series = [
     {name: "James May's Man Lab", id: "202351", offset: 1},
     {name: "James May's Cars of the People", id: "284341", offset: 1},
     {name: "Kabaneri of the Iron Fortress", id: "305082", offset: 1},
-    {name: "Marco Polo", id: "266091", offset: 0},
     {name: "Marvel's Daredevil", id: "281662", offset: 0},
     {name: "Marvel's Jessica Jones", id: "284190", offset: 0},
     {name: "Marvel's Luke Cage", id: "304219", offset: 0},
@@ -62,6 +61,7 @@ series = [
 
 SCHEDULER.every "6h", :first_in => 0 do |job|
   # Authorization
+  puts("TV-Series, initiate update at #{Time.now.strftime("%H:%M")}")
   puts("Attempting to fetch auth token")
   auth_uri = URI.parse(URI.encode("https://api.thetvdb.com/login"))
   http = Net::HTTP.new(auth_uri.host, auth_uri.port)
@@ -98,7 +98,7 @@ SCHEDULER.every "6h", :first_in => 0 do |job|
       data = json_parse["data"].first
       title = "#{serie[:name]} #{data["airedSeason"]}x#{data["airedEpisodeNumber"]}: #{data["episodeName"]}"
       puts(data)
-      episodes << {title: title, episode: data}
+      episodes << {title: title, episode: truncate(data["overview"])}
 
     rescue OpenURI::HTTPError => e
       puts("No Data found due to #{e}")
@@ -111,3 +111,14 @@ SCHEDULER.every "6h", :first_in => 0 do |job|
   puts("Send Event")
   send_event("tvseriestoday", { :episodes => episodes})
 end
+
+  def truncate(string, length = 300)
+    raise 'Truncate: Length should be greater than 3' unless length > 3
+
+    truncated_string = string.to_s
+    if truncated_string.length > length
+      truncated_string = truncated_string[0...(length - 3)]
+      truncated_string += '...'
+    end
+    truncated_string
+  end
