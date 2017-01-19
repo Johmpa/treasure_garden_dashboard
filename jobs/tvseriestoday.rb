@@ -56,7 +56,8 @@ series = [
     {name: "The X-Files", id: "77398", offset: 1, source: "BTN"},
     {name: "Top Gear", id: "74608", offset: 1, source: "BTN"},
     {name: "Voltron: Legendary Defender", id: "307899", offset: 0, source: "Netflix"},
-    {name: "Taboo", id: "292157", offset: 0, source: "HBO Nordic"}
+    {name: "Taboo", id: "292157", offset: 0, source: "HBO Nordic"},
+    {name: "Six", id: "311809", offset: 1, source: "HBO Nordic"}
 ]
 
 
