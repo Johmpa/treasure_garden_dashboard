@@ -4,12 +4,14 @@ require 'nokogiri'
 require 'htmlentities'
 
 news_feeds = {
-  #"bbc-tech" => "http://feeds.bbci.co.uk/news/technology/rss.xml",
-  #"mashable" => "http://feeds.feedburner.com/Mashable",
-  #"techcrunch" => "http://feeds.feedburner.com/TechCrunch/",
-  #"opm" => "http://www.opm.gov/rss/operatingstatus.atom",
-  #"dn" => "http://www.dn.se/nyheter/m/rss/",
-  "svd" => "http://www.svd.se/?service=rss",
+    #"bbc-tech" => "http://feeds.bbci.co.uk/news/technology/rss.xml",
+    #"mashable" => "http://feeds.feedburner.com/Mashable",
+    #"techcrunch" => "http://feeds.feedburner.com/TechCrunch/",
+    #"opm" => "http://www.opm.gov/rss/operatingstatus.atom",
+    #"dn" => "http://www.dn.se/nyheter/m/rss/",
+    "sweclockers" => "http://www.sweclockers.com/feeds/nyheter",
+    "svt" => "http://www.svt.se/nyheter/rss.xml",
+    #"svd" => "https://www.svd.se/?service=rss",
 }
 
 Decoder = HTMLEntities.new
@@ -42,20 +44,20 @@ class News
       feed.items.each do |item|
         title = clean_html(item.title.to_s)
         begin
-          summary =  truncate(clean_html(item.description))
+          summary = truncate(clean_html(item.description))
         rescue
           doc = Nokogiri::HTML(item.summary.content)
           summary = truncate((doc.xpath("//text()").remove).to_s)
         end
-        news_headlines.push({ title: title, description: summary })
+        news_headlines.push({title: title, description: summary})
       end
     end
     news_headlines
   end
 
-  def clean_html( html )
+  def clean_html(html)
     html = html.gsub(/<\/?[^>]*>/, "")
-    html = Decoder.decode( html )
+    html = Decoder.decode(html)
     return html
   end
 
@@ -73,6 +75,6 @@ end
 SCHEDULER.every '60m', :first_in => 0 do |job|
   @News.each do |news|
     headlines = news.latest_headlines()
-    send_event(news.widget_id, { :headlines => headlines })
+    send_event(news.widget_id, {:headlines => headlines})
   end
 end

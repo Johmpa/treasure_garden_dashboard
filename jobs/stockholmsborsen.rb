@@ -14,7 +14,8 @@ prevMinimum = -1;
 
 #SCHEDULER.every "1m", :first_in => 0 do |job|
 SCHEDULER.cron '*/5 9-17 * * 1-5' do |job|
-  source = open('http://bors-nliv.svd.se/', &:read)
+  puts "OMXSPI: Updating"
+  source = open('https://bors-nliv.svd.se/', {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}, &:read)
 
   #  <h2 class="resource-flag sweden">OMX-S</h2><span class="result"><span class="time">Kl 17:30:</span> &nbsp; 476,42 &nbsp; <span class="pos">+0,11%</span></span>
   #puts source
@@ -26,8 +27,8 @@ SCHEDULER.cron '*/5 9-17 * * 1-5' do |job|
   currentvalue = currentvalue.gsub(",",".") # Fixa amerikanskt decimaltecken
   currentvalue = currentvalue.gsub(" ","") # Få bort eventuellt mellanslag i siffran
 
-  #puts "OMXSPI: Current Value: " + currentvalue
-  #puts "OMXSPI: Percentage:"
+  puts "OMXSPI: Current Value: " + currentvalue
+  puts "OMXSPI: Percentage:"
   #puts percentage
   percentage = percentage.gsub("&minus;","-")
   percentage = percentage.gsub("</span>", "") # Fulhack, men orka
