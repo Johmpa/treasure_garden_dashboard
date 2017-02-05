@@ -10,8 +10,8 @@ news_feeds = {
     #"opm" => "http://www.opm.gov/rss/operatingstatus.atom",
     #"dn" => "http://www.dn.se/nyheter/m/rss/",
     "sweclockers" => "http://www.sweclockers.com/feeds/nyheter",
-    "svt" => "http://www.svt.se/nyheter/rss.xml",
-    #"svd" => "https://www.svd.se/?service=rss",
+    #"svt" => "http://www.svt.se/nyheter/rss.xml",
+    "svd" => "https://www.svd.se/?service=rss",
 }
 
 Decoder = HTMLEntities.new
@@ -39,7 +39,7 @@ class News
 
   def latest_headlines()
     news_headlines = []
-    open(@feed) do |rss|
+    open(@feed, {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}) do |rss|
       feed = RSS::Parser.parse(rss)
       feed.items.each do |item|
         title = clean_html(item.title.to_s)
