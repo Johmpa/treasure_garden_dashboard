@@ -31,7 +31,7 @@ series = [
     {name: "The Magicians", id: "299139", offset: 0, source: "HBO Nordic"},
     {name: "Black Sails", id: "262407", offset: 0, source: "HBO Nordic"},
     {name: "The Expanse", id: "280619", offset: 1, source: "BTN / Netflix"},
-    {name: "Last Week Tonight with John Oliver", id: "278518", offset: 1, source: "HBO Nordic"},
+    {name: "Last Week Tonight with John Oliver", id: "278518", offset: 3, source: "HBO Nordic"},
     {name: "Marvel's Iron Fist", id: "317953", offset: 0, source: "Netflix"},
     {name: "Westworld", id: "296762", offset: 0, source: "HBO Nordic"},
     {name: "12 Monkeys", id: "272644", offset: 1, source: "HBO Nordic"},
@@ -58,7 +58,10 @@ series = [
     {name: "Voltron: Legendary Defender", id: "307899", offset: 0, source: "Netflix"},
     {name: "Taboo", id: "292157", offset: 0, source: "HBO Nordic"},
     {name: "Six", id: "311809", offset: 1, source: "HBO Nordic"},
-    {name: "Legion", id: "320724", offset: 1, source: "BTN"}
+    {name: "Legion", id: "320724", offset: 1, source: "BTN"},
+    {name: "Dirk Gently's Holistic Detective Agency", id: "312505", offset: 0, source: "Netflix"},
+    {name: "Roman Empire: Reign of Blood", id: "319594", offset: 0, source: "Netflix"},
+    {name: "The Great War", id: "286334", offset: 0, source: "Youtube"}
 ]
 
 
