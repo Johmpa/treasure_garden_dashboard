@@ -60,6 +60,7 @@ series = [
     {name: "Taboo", id: "292157", offset: 0, source: "HBO Nordic"},
     {name: "Six", id: "311809", offset: 1, source: "HBO Nordic"},
     {name: "Legion", id: "320724", offset: 1, source: "BTN"},
+    {name: "American Gods", id: "253573", offset: 1, source: "Amazon Prime / BTN"},
     {name: "Dirk Gently's Holistic Detective Agency", id: "312505", offset: 0, source: "Netflix"},
     {name: "Roman Empire: Reign of Blood", id: "319594", offset: 0, source: "Netflix"},
     {name: "The Great War", id: "286334", offset: 0, source: "Youtube"}
