@@ -64,7 +64,11 @@ series = [
     {name: "Dirk Gently's Holistic Detective Agency", id: "312505", offset: 0, source: "Netflix"},
     {name: "Roman Empire: Reign of Blood", id: "319594", offset: 0, source: "Netflix"},
     {name: "The Great War", id: "286334", offset: 0, source: "Youtube"},
-    {name: "Saga of Tanya the Evil", id: "315500", offset: 0, source: "Crunchyroll"}
+    {name: "Saga of Tanya the Evil", id: "315500", offset: 0, source: "Crunchyroll"},
+    {name: "The Jimquisition", id: "298774", offset: 0, source: "Youtube"},
+    {name: "Man at Arms", id: "274046", offset: 0, source: "Youtube"},
+    {name: "The Co-Optional Podcast", id: "275618", offset: 0, source: "Youtube"},
+    {name: "Around the Verse", id: "282890", offset: 0, source: "Youtube"}
 ]
 
 
