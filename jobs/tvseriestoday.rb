@@ -69,6 +69,9 @@ series = [
     {name: "The Jimquisition", id: "298774", offset: 0, source: "Youtube"},
     {name: "Man at Arms", id: "274046", offset: 0, source: "Youtube"},
     {name: "The Co-Optional Podcast", id: "275618", offset: 0, source: "Youtube"},
+    {name: "The Orville", id: "328487", offset: 1, source: "BTN"},
+    {name: "Crash Course Film Production", id: "334189", offset: 0, source: "Youtube"},
+    {name: "Star Trek Discovery", id: "328711", offset: 1, source: "Netflix"},
     {name: "Around the Verse", id: "282890", offset: 0, source: "Youtube"}
 ]
 
