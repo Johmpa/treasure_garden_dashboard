@@ -72,7 +72,8 @@ series = [
     {name: "The Orville", id: "328487", offset: 1, source: "BTN"},
     {name: "Crash Course Film Production", id: "334189", offset: 0, source: "Youtube"},
     {name: "Star Trek Discovery", id: "328711", offset: 1, source: "Netflix"},
-    {name: "Around the Verse", id: "282890", offset: 0, source: "Youtube"}
+    {name: "Around the Verse", id: "282890", offset: 0, source: "Youtube"},
+    {name: "Marvel's The Punisher", id: "331980", offset: 0, source: "Netflix"}
 ]
 
 

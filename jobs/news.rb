@@ -9,8 +9,8 @@ news_feeds = {
     #"techcrunch" => "http://feeds.feedburner.com/TechCrunch/",
     #"opm" => "http://www.opm.gov/rss/operatingstatus.atom",
     #"dn" => "http://www.dn.se/nyheter/m/rss/",
-    "sweclockers" => "http://www.sweclockers.com/feeds/nyheter",
-    #"svt" => "http://www.svt.se/nyheter/rss.xml",
+    #"sweclockers" => "http://www.sweclockers.com/feeds/nyheter",
+    #"svt" => "https://www.svt.se/nyheter/rss.xml",
     "svd" => "https://www.svd.se/?service=rss",
 }
 
