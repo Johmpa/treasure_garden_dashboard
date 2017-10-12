@@ -16,7 +16,7 @@ apikey = "51F6746BE38B32BF"
 authentication_token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODEyODUyNDQsImlkIjoiVHJlYXN1cmUgR2FyZGVuIERhc2hib2FyZCIsIm9yaWdfaWF0IjoxNDgxMTk4ODQ0fQ.ENsbnaNvL_BJzu3xl17W-ij5-mENbdhH75YHSPA3jY7jkceoNcRr-d3bQxZg4BItBnfZB6f-w-QLhfxwJO822MqGRmAse9oh6rhfElVE0-ELBcq_vZIT1TScLJzg6mLVux9XaoN-3rq9VXl4GdGiKzjxOYEtJwR_KueJ1rk8uDSxLkXAoaTVJf3mXyg_mm_D4elRoOlw1wXhFbYrA3_SCo_wXP6lirBMK8KfmhX82KHnqxIvt4Dk2H2qnyfUGBoAaTBjf9mxrW5O_JwtXXVi7uXYeXfRM95lNKHUqtA73acqKv5F4avbsq2MqDlUygAfyynrwF8EGe-kIAHkTersiA"
 series = [
     {name: "Arrow", id: "257655", offset: 1, source: "BTN"},
-    {name: "DC's Legends of Tomorrow", id: "295760", offset: 5, source: "Netflix"},
+    {name: "DC's Legends of Tomorrow", id: "295760", offset: 1, source: "Netflix"},
     {name: "Star Wars Rebels", id: "283468", offset: 1, source: "BTN"},
     {name: "The Grand Tour", id: "314087", offset: 0, source: "Amazon Prime"},
     {name: "Marvels Agents of S.H.I.E.L.D.", id: "263365", offset: 1, source: "BTN"},
@@ -54,7 +54,7 @@ series = [
     {name: "Stranger Things", id: "305288", offset: 0, source: "Netflix"},
     {name: "The Crown", id: "305574", offset: 0, source: "Netflix"},
     {name: "The Last Ship", id: "269533", offset: 1, source: "BTN"},
-    {name: "The Shanarra Chronicles", id: "289096", offset: 0, source: "HBO Nordic"},
+    {name: "The Shanarra Chronicles", id: "289096", offset: 1, source: "HBO Nordic"},
     {name: "The X-Files", id: "77398", offset: 1, source: "BTN"},
     {name: "Top Gear", id: "74608", offset: 1, source: "BTN"},
     {name: "Voltron: Legendary Defender", id: "307899", offset: 0, source: "Netflix"},
