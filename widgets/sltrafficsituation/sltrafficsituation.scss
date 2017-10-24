@@ -4,6 +4,10 @@
 // SL-färger kan hittas på http://www.slideshare.net/KanalSL/ab-sl-grafisk-profil-10-visuell-identitet
 
 //$background-color:  #008ed7;
+$dark-grey: #303030;
+$dark-orange: #bb7b31;
+$alert-red: #d72600;
+$deep-black: #1d1d1d;
 $background-color: #002d41;
 $value-color:       #fff;
 $value-color-disturbance: #e57622;
@@ -23,22 +27,22 @@ $up: #E3E8EB;
 // ----------------------------------------------------------------------------
 .widget-sltrafficsituation {
 
-  background-color: $rainclouds;
+  background-color: $deep-black;
 
   .title {
-    color: $up;
+    color: $title-color;
   }
 
   .value {
-    color: $value-color-disturbance;
+    color: $alert-red;
   }
 
   .value-standard {
-    color: $ironmancyan;
+    color: $dark-orange;
   }
 
   .value-disturbance {
-    color: $value-color-disturbance;
+    color: $alert-red;
   }
 
   .change-rate {

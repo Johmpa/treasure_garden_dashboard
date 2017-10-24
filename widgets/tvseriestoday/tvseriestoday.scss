@@ -1,6 +1,7 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
+$dark-grey: #303030;
 $background-color: #2e93ff;
 $value-color:       #fff;
  
@@ -17,7 +18,8 @@ $up: #E3E8EB;
 // ----------------------------------------------------------------------------
 .widget-tvseriestoday {
 
-  background-color: $onethirtyBA;
+  //background-color: $onethirtyBA;
+  background-color: $dark-grey;
   vertical-align: baseline !important;
 
   .headline-container {
