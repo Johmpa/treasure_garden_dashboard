@@ -5,12 +5,12 @@ require 'json'
 
 home_location = URI::encode('59.3674343,17.8718877')
 key             = URI::encode('q3sgmezmvtwn4erc4t5rkpe3')
-locations       = [{ name: "Pensionsmyndigheten", location: URI::encode('59.3155173,18.032994')},
+locations       = [{ name: "Com Hem", location: URI::encode('59.3331998,18.0416967')},
                    { name: "Cygni HQ", location: URI::encode('59.334812,18.069467')},
                   # { name: "Roslagshallen", location: URI::encode('59.347187,18.059262')},
                    { name: "Föräldrar", location: URI::encode('59.373535,17.905214')},
                    #{ name: "Tim", location: URI::encode('59.356455,17.888587')},
-                   { name: "Chrille & Sara", location: URI::encode('59.420553,17.835940')},
+                   { name: "Chrille & Sara", location: URI::encode('59.5792748,17.4825038')},
                    { name: "Micke / Andreas", location: URI::encode('59.362983,17.945802')}
 ]
 #locations << { name: "Pensionsmyndigheten", location: URI::encode('59.3155173,18.032994')}
