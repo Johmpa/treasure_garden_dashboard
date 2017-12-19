@@ -29,7 +29,6 @@ series = [
     {name: "Colony", id: "284210", offset: 1, source: "BTN"},
     {name: "The Flash", id: "279121", offset: 1, source: "BTN"},
     {name: "The Magicians", id: "299139", offset: 0, source: "HBO Nordic"},
-    {name: "Black Sails", id: "262407", offset: 0, source: "HBO Nordic"},
     {name: "The Expanse", id: "280619", offset: 1, source: "BTN / Netflix"},
     {name: "Last Week Tonight with John Oliver", id: "278518", offset: 1, source: "HBO Nordic"},
     {name: "Marvel's Iron Fist", id: "317953", offset: 0, source: "Netflix"},
@@ -73,6 +72,7 @@ series = [
     {name: "Crash Course Film Production", id: "334189", offset: 0, source: "Youtube"},
     {name: "Star Trek Discovery", id: "328711", offset: 1, source: "Netflix"},
     {name: "Around the Verse", id: "282890", offset: 0, source: "Youtube"},
+    {name: "Knightfall", id: "323608", offset: 1, source: "HBO Nordic"},
     {name: "Marvel's The Punisher", id: "331980", offset: 0, source: "Netflix"}
 ]
 

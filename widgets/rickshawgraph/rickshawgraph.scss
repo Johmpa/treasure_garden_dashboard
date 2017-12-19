@@ -1,14 +1,10 @@
 // ----------------------------------------------------------------------------
+// Imports
+// ----------------------------------------------------------------------------
+@import "../../assets/stylesheets/treasure-stylesheet.scss";
+// ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$deep-black: #1d1d1d;
-$dark-grey: #303030;
-$orange: #774721;
-$ironmancyan: #84CED3;
-$rainclouds:  #203341;
-$onethirtyBA: #4E6E82;
-$emiliascloud: #ABC7D1;
-$up: #E3E8EB;
 
 $background-color:  #203341;
 
@@ -23,7 +19,7 @@ $tick-color:        #ABC7D1;
 // ----------------------------------------------------------------------------
 .widget-rickshawgraph {
 
-  background-color: $deep-black;
+  background-color: $dark-background;
   //background-color: $background-color;
   position: relative;
 

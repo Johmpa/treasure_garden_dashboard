@@ -1,18 +1,12 @@
 // ----------------------------------------------------------------------------
-// Sass declarations
+// Imports
 // ----------------------------------------------------------------------------
-$background-color:  #dc5945;
-$ironmancyan: #84CED3;
-$rainclouds: #203341;
-$onethirtyBA: #4E6E82;
-$emiliascloud: #ABC7D1;
-$up: #E3E8EB;
-$dark-grey: #303030;
+@import "../../assets/stylesheets/treasure-stylesheet.scss";
 // ----------------------------------------------------------------------------
 // Widget-clock styles
 // ----------------------------------------------------------------------------
 .widget-clock {
 
-  background-color: $dark-grey;
+  background-color: $light-background;
 
 }
