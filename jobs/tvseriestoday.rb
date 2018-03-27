@@ -73,7 +73,8 @@ series = [
     {name: "Star Trek Discovery", id: "328711", offset: 1, source: "Netflix"},
     {name: "Around the Verse", id: "282890", offset: 0, source: "Youtube"},
     {name: "Knightfall", id: "323608", offset: 1, source: "HBO Nordic"},
-    {name: "Marvel's The Punisher", id: "331980", offset: 0, source: "Netflix"}
+    {name: "Marvel's The Punisher", id: "331980", offset: 0, source: "Netflix"},
+    {name: "Krypton", id: "328599", offset: 1, source: "HBO Nordic"}
 ]
 
 
