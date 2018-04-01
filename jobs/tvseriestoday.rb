@@ -74,7 +74,9 @@ series = [
     {name: "Around the Verse", id: "282890", offset: 0, source: "Youtube"},
     {name: "Knightfall", id: "323608", offset: 1, source: "HBO Nordic"},
     {name: "Marvel's The Punisher", id: "331980", offset: 0, source: "Netflix"},
-    {name: "Krypton", id: "328599", offset: 1, source: "HBO Nordic"}
+    {name: "Krypton", id: "328599", offset: 1, source: "HBO Nordic"},
+    {name: "Izetta, the Last Witch", id: "313867", offset: 0, source: "Crunchyroll"},
+    {name: "Death March to the Parallel World Rhapsody", id: "336404", offset: 0, source: "Crunchyroll"}
 ]
 
 
