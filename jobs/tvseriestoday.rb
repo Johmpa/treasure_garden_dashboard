@@ -76,7 +76,12 @@ series = [
     {name: "Marvel's The Punisher", id: "331980", offset: 0, source: "Netflix"},
     {name: "Krypton", id: "328599", offset: 1, source: "HBO Nordic"},
     {name: "Izetta, the Last Witch", id: "313867", offset: 0, source: "Crunchyroll"},
-    {name: "Death March to the Parallel World Rhapsody", id: "336404", offset: 0, source: "Crunchyroll"}
+    {name: "Death March to the Parallel World Rhapsody", id: "336404", offset: 0, source: "Crunchyroll"},
+    {name: "One-Punch Man", id: "293088", offset: 0, source: "Crunchyroll"},
+    {name: "Violet Evergarden", id: "330139", offset: 0, source: "Netflix"},
+    {name: "Counterpart", id: "337302", offset: 0, source: "Netflix"},
+    {name: "Lost in Space (2018)", id: "343253", offset: 0, source: "Netflix"},
+    {name: "Legend of the Galactic Heroes: Die Neue These", id: "343237", offset: 0, source: "Crunchyroll"}
 ]
 
 
