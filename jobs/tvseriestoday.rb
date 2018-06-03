@@ -32,7 +32,7 @@ series = [
     {name: "The Expanse", id: "280619", offset: 1, source: "BTN / Netflix"},
     {name: "Last Week Tonight with John Oliver", id: "278518", offset: 1, source: "HBO Nordic"},
     {name: "Marvel's Iron Fist", id: "317953", offset: 0, source: "Netflix"},
-    {name: "Westworld", id: "296762", offset: 0, source: "HBO Nordic"},
+    {name: "Westworld", id: "296762", offset: 1, source: "HBO Nordic"},
     {name: "12 Monkeys", id: "272644", offset: 1, source: "HBO Nordic"},
     {name: "After the Thrones", id: "309875", offset: 1, source: "HBO Nordic"},
     {name: "Game of Thrones", id: "121361", offset: 1, source: "HBO Nordic"},
