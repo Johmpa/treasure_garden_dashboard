@@ -81,6 +81,8 @@ series = [
     {name: "Violet Evergarden", id: "330139", offset: 0, source: "Netflix"},
     {name: "Counterpart", id: "337302", offset: 0, source: "Netflix"},
     {name: "Lost in Space (2018)", id: "343253", offset: 0, source: "Netflix"},
+    {name: "Explained", id: "347903", offset: 0, source: "Netflix"},
+    {name: "Space Battleship Yamato 2199", id: "259675", offset: 0, source: "Tokyo Tosho"},
     {name: "Legend of the Galactic Heroes: Die Neue These", id: "343237", offset: 0, source: "Crunchyroll"}
 ]
 
