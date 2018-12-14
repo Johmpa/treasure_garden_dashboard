@@ -29,7 +29,7 @@ series = [
     {name: "Colony", id: "284210", offset: 1, source: "BTN"},
     {name: "The Flash", id: "279121", offset: 1, source: "BTN"},
     {name: "The Magicians", id: "299139", offset: 0, source: "HBO Nordic"},
-    {name: "The Expanse", id: "280619", offset: 1, source: "BTN / Netflix"},
+    {name: "The Expanse", id: "280619", offset: 1, source: "Amazon Prime"},
     {name: "Last Week Tonight with John Oliver", id: "278518", offset: 1, source: "HBO Nordic"},
     {name: "Marvel's Iron Fist", id: "317953", offset: 0, source: "Netflix"},
     {name: "Westworld", id: "296762", offset: 1, source: "HBO Nordic"},
@@ -83,6 +83,12 @@ series = [
     {name: "Lost in Space (2018)", id: "343253", offset: 0, source: "Netflix"},
     {name: "Explained", id: "347903", offset: 0, source: "Netflix"},
     {name: "Space Battleship Yamato 2199", id: "259675", offset: 0, source: "Tokyo Tosho"},
+    {name: "Attack on Titan", id: "267440", offset: 0, source: "Crunchyroll"},
+    {name: "The Chilling Adventures of Sabrina", id: "338947", offset: 0, source: "Netflix"},
+    {name: "Medal of Honor", id: "353913", offset: 0, source: "Netflix"},
+    {name: "Castlevania", id: "329065", offset: 0, source: "Netflix"},
+    {name: "Star Wars: Resistance", id: "351575", offset: 0, source: "BTN"},
+    {name: "The Mandalorian", id: "356693", offset: 0, source: "Disney"},
     {name: "Legend of the Galactic Heroes: Die Neue These", id: "343237", offset: 0, source: "Crunchyroll"}
 ]
 

@@ -15,25 +15,21 @@ prevMinimum = -1;
 #SCHEDULER.every "1m", :first_in => 0 do |job|
 SCHEDULER.cron '*/5 7-15 * * 1-5' do |job|
   puts "OMXSPI: Updating"
-  source = open('https://bors-nliv.svd.se/', {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}, &:read)
+  source = open('https://www.svd.se/bors/indexlist.php?list=sverige', {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}, &:read)
 
-  #  <h2 class="resource-flag sweden">OMX-S</h2><span class="result"><span class="time">Kl 17:30:</span> &nbsp; 476,42 &nbsp; <span class="pos">+0,11%</span></span>
-  #puts source
+  #<h2 class="resource-flag sweden">OMXS-S</h2> <span class="result"><span class="time">13:09</span> &nbsp;544,46 &nbsp; <span class="neg">&minus;0,65%</span></span>
 
-  #puts /.*resource-flag sweden">OMX-S.*/.match(source)
-  #puts /.*resource-flag sweden">OMX-S.*\n.*<span class="time">Kl .*:.*/.match(source)
-  currentvalue =  /.*resource-flag sweden">OMX-S.*\n.*<span class="time">Kl (.*):<.span> &nbsp. (.*) &nbsp; <span class=.*>.*/.match(source)[2]
-  percentage =    /.*resource-flag sweden">OMX-S.*\n.*<span class="time">Kl (.*):<.span> &nbsp. (.*) &nbsp; <span class=.*>(.*)<.span><.span>/.match(source)[3] # Fult men orka
+  currentvalue =  /.*resource-flag sweden">OMXS-S.*\n.*<span class="result"><span class="time">(.*)<.span> &nbsp.(.*) &nbsp; <span class=.*>.*/.match(source)[2]
+  percentage =    /.*resource-flag sweden">OMXS-S.*\n.*<span class="result"><span class="time">(.*)<.span> &nbsp.(.*) &nbsp; <span class=.*>(.*)<.span><.span>/.match(source)[3] # Fult men orka
   currentvalue = currentvalue.gsub(",",".") # Fixa amerikanskt decimaltecken
   currentvalue = currentvalue.gsub(" ","") # Få bort eventuellt mellanslag i siffran
 
   puts "OMXSPI: Current Value: " + currentvalue
-  puts "OMXSPI: Percentage:"
-  #puts percentage
+  puts "OMXSPI: Percentage:" + percentage
+
   percentage = percentage.gsub("&minus;","-")
   percentage = percentage.gsub("</span>", "") # Fulhack, men orka
-  #puts "OMXSPI: Trimmed Percentage:"
-  #puts percentage
+  puts "OMXSPI: Trimmed Percentage:" + percentage
 
   currentTime = Time.new
   #puts "OMXSPI: Current Time: " + currentTime.to_s
