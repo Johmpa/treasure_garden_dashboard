@@ -89,6 +89,8 @@ series = [
     {name: "Castlevania", id: "329065", offset: 0, source: "Netflix"},
     {name: "Star Wars: Resistance", id: "351575", offset: 0, source: "BTN"},
     {name: "The Mandalorian", id: "356693", offset: 0, source: "Disney"},
+    {name: "DC's Titans", id: "341663", offset: 0, source: "Netflix"},
+    {name: "Patriot Act with Hasan Minhaj", id: "351269", offset: 0, source: "Netflix"},
     {name: "Legend of the Galactic Heroes: Die Neue These", id: "343237", offset: 0, source: "Crunchyroll"}
 ]
 
