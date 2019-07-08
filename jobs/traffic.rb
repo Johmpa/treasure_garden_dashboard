@@ -5,7 +5,7 @@ require 'json'
 
 home_location = URI::encode('59.3674343,17.8718877')
 key             = URI::encode('q3sgmezmvtwn4erc4t5rkpe3')
-locations       = [{ name: "Com Hem", location: URI::encode('59.3331998,18.0416967')},
+locations       = [{ name: "Tele2", location: URI::encode('59.4040648,17.9545858')},
                    { name: "Cygni HQ", location: URI::encode('59.334812,18.069467')},
                   # { name: "Roslagshallen", location: URI::encode('59.347187,18.059262')},
                    { name: "Föräldrar", location: URI::encode('59.373535,17.905214')},
