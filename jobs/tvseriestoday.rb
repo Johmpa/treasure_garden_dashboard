@@ -91,7 +91,7 @@ series = [
     {name: "Love, Death & Robots", id: "357888", offset: 0, source: "Netflix"},
     {name: "Kingdom", id: "360366", offset: 0, source: "Netflix"},
     {name: "Good Omens", id: "359569", offset: 0, source: "Amazon Prime"},
-    {name: "Vinland Saga", id: "359274", offset: 1, source: "Amazon Prime"},
+    {name: "Vinland Saga", id: "359274", offset: 0, source: "Amazon Prime"},
     {name: "Crash Course: European History", id: "361839", offset: 0, source: "Youtube"},
     {name: "Kurzgesagt - In a Nutshell", id: "287953", offset: 0, source: "Youtube"},
     {name: "Cop Craft", id: "361491", offset: 1, source: "Crunchyroll"},
