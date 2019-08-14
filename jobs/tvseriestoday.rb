@@ -94,7 +94,9 @@ series = [
     {name: "Vinland Saga", id: "359274", offset: 0, source: "Amazon Prime"},
     {name: "Crash Course: European History", id: "361839", offset: 0, source: "Youtube"},
     {name: "Kurzgesagt - In a Nutshell", id: "287953", offset: 0, source: "Youtube"},
-    {name: "Cop Craft", id: "361491", offset: 1, source: "Crunchyroll"},
+    {name: "Cop Craft", id: "361491", offset: 0, source: "BTN"},
+    {name: "The Terror", id: "6786334", offset: 1, source: "Amazon Prime"},
+    {name: "The Boys", id: "7140390", offset: 0, source: "Amazon Prime"},
     {name: "Legend of the Galactic Heroes: Die Neue These", id: "343237", offset: 0, source: "Crunchyroll"}
 ]
 
