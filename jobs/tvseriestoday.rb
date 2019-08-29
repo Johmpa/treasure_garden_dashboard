@@ -85,7 +85,7 @@ series = [
     {name: "Medal of Honor", id: "353913", offset: 0, source: "Netflix"},
     {name: "Castlevania", id: "329065", offset: 0, source: "Netflix"},
     {name: "Star Wars: Resistance", id: "351575", offset: 0, source: "BTN"},
-    {name: "The Mandalorian", id: "356693", offset: 0, source: "Disney"},
+    {name: "The Mandalorian", id: "356693", offset: 0, source: "Disney+"},
     {name: "DC's Titans", id: "341663", offset: 0, source: "Netflix"},
     {name: "Patriot Act with Hasan Minhaj", id: "351269", offset: 0, source: "Netflix"},
     {name: "Love, Death & Robots", id: "357888", offset: 0, source: "Netflix"},
@@ -97,6 +97,7 @@ series = [
     {name: "Cop Craft", id: "361491", offset: 0, source: "BTN"},
     {name: "The Terror", id: "6786334", offset: 1, source: "Amazon Prime"},
     {name: "The Boys", id: "7140390", offset: 0, source: "Amazon Prime"},
+    {name: "Star Wars: The Clone Wars", id: "83268", offset: 0, source: "Disney+"},
     {name: "Legend of the Galactic Heroes: Die Neue These", id: "343237", offset: 0, source: "Crunchyroll"}
 ]
 
