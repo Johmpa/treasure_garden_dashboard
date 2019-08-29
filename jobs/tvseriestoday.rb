@@ -97,6 +97,7 @@ series = [
     {name: "Cop Craft", id: "361491", offset: 0, source: "BTN"},
     {name: "The Terror", id: "6786334", offset: 1, source: "Amazon Prime"},
     {name: "The Boys", id: "7140390", offset: 0, source: "Amazon Prime"},
+    {name: "Carnival Row", id: "365026", offset: 0, source: "Amazon Prime"},
     {name: "Star Wars: The Clone Wars", id: "83268", offset: 0, source: "Disney+"},
     {name: "Legend of the Galactic Heroes: Die Neue These", id: "343237", offset: 0, source: "Crunchyroll"}
 ]
