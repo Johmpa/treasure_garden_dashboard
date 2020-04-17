@@ -13,7 +13,7 @@ previousTime = Time.new()
 prevMinimum = -1;
 
 #SCHEDULER.every "1m", :first_in => 0 do |job|
-SCHEDULER.cron '*/5 8-16 * * 1-5' do |job|
+SCHEDULER.cron '*/5 7-15 * * 1-5' do |job|
   puts "OMXSPI: Updating"
   source = open('https://www.svd.se/bors/indexlist.php?list=sverige', {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}, &:read)
 
