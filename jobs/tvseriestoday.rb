@@ -99,6 +99,12 @@ series = [
     {name: "The Witcher", id: "362696", offset: 0, source: "Netflix"},
     {name: "Star Trek: Picard", id: "364093", offset: 0, source: "Amazon Prime"},
     {name: "Watchmen", id: "360733", offset: 0, source: "HBO Nordic"},
+    {name: "Our Last Crusade or the Rise of a New World", id: "387027", offset: 1, source: "BTN"},
+    {name: "Animaniacs", id: "72879", offset: 1, source: "BTN"},
+    {name: "James May: Oh Cook!", id: "384721", offset: 1, source: "BTN"},
+    {name: "Disney Gallery: The Mandalorian", id: "380352", offset: 0, source: "Disney+"},
+    {name: "Wandavision", id: "362392", offset: 0, source: "Disney+"},
+    {name: "Unsolved Mysteries", id: "76644", offset: 0, source: "Disney+"},
     {name: "Legend of the Galactic Heroes: Die Neue These", id: "343237", offset: 0, source: "Crunchyroll"}
 ]
 
